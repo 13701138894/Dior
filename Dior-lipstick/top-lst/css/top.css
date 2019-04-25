@@ -1,0 +1,96 @@
+.top {
+  width: 1349px;
+}
+.top .upper {
+  position: relative;
+  width: 100%;
+  height: 79px;
+  margin: 0 auto;
+  line-height: 79px;
+  border-bottom: 1px solid #ccc;
+}
+.top .upper .ml {
+  width: 98px;
+  height: 38px;
+  border: 1px solid #ccc;
+  line-height: 38px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 19px;
+  box-shadow: 0 1px 3px 1px  #ebebeb;
+  margin-left: 27px;
+  margin-top: 18px;
+  margin-right: 23px;
+}
+.top .upper input {
+  width: 299px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #757575;
+  padding-left: 25px;
+  box-sizing: border-box;
+  margin-top: 18px;
+  font-size: 14px;
+}
+.top .upper span.search {
+  font-size: 28px;
+  position: absolute;
+  top: 0;
+  left: 400px;
+  transform: rotate(-10deg);
+}
+.top .upper .dior {
+  margin-left: 150px;
+}
+.top .upper .dior a {
+  display: inline-block;
+}
+.top .upper .dior a img {
+  margin-top: -7px;
+}
+.top .upper .r span {
+  font-size: 22px;
+  margin-right: 26px;
+}
+.top .upper .r span:nth-child(2) {
+  font-size: 27px;
+}
+.content {
+  width: 1349px;
+  margin: 0 auto;
+  margin-top: 45px;
+  padding-left: 20px;
+}
+.content .left .t {
+  margin-bottom: 26px;
+}
+.content .left .t a {
+  display: inline-block;
+}
+.content .left .t a img {
+  width: 785px;
+}
+.content .left ul {
+  width: 806px;
+}
+.content .left ul li {
+  float: left;
+  margin-right: 21px;
+  margin-bottom: 27px;
+}
+.content .left ul li img {
+  width: 382px;
+}
+.content .right {
+  width: 448px;
+  margin-left: 52px;
+}
+.content .right .tittle {
+  padding-bottom: 20px;
+  font-size: 31px;
+  line-height: 35px;
+  border-bottom: 1px solid #ccc;
+}
+.content .right .tittle span {
+  font-size: 16px;
+}
