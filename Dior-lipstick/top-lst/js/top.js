@@ -208,6 +208,7 @@
     // 定制刻字功能
     $('.right .dz a').eq(0).click(function(){
         $('.kz .wrapper .ok').prop('disabled',true).css({'background':'#cccccc','border-color':'#cccccc','cursor':'default'});
+        $('body').addClass('hidden');
         $('.kz').show();
         $('.kz input').on('input',function(){
             var num=8-$(this).val().length;
@@ -216,34 +217,38 @@
             $('.kz .wrapper .ok').prop('disabled',true);
             if(num<8) {
                 $('.kz .wrapper .ok').prop('disabled',false).css({'background':'#000000','border-color':'#000000','cursor':'pointer'});
-                console.log(456)
             }else {
                 $('.kz .wrapper .ok').prop('disabled',true).css({'background':'#cccccc','border-color':'#cccccc','cursor':'default'});
             }
 
         })
-        $('.kz .ok').on('click',function(){
-            // console.log(123);
-            var kznr= $('.kz input').val();
+    })
+    $('.kz .ok').on('click',function(){
+        var kznr= $('.kz input').val();
             $('.dz i.nr').addClass('nrr');
-            $('.dz span.nr').show().text(kznr);
+            $('.dz span.nr').text(kznr).show();
+            // $('.dz span.nr').text(kznr);
+            $('body').removeClass('hidden');
             $('.kz').hide();
             $('.kz input').val('');
             $('.kz .count').text('8');
-        })
     })
-    // 关闭
-    $('.kz .close,.kz  .cancel').on('click',function(){
+    // 关闭定制刻字功能
+    $('.kz .close,.kz  .cancel').on('click',function(e){
+        // e.stopPropagation();
         $('.kz input').val('');
         $('.kz .count').text('8');
+        $('body').removeClass('hidden');
         $('.kz').hide();
     })
 
     // 免费送货及退换
     $('.content .right .btn .th').on('click',function(){
         $('.tuihuan').show();
+        $('body').addClass('hidden');
         $('.tuihuan span').on('click',function(){
             $('.tuihuan').hide();
+            $('body').removeClass('hidden');
         })
     })
 
@@ -253,6 +258,9 @@
         if(isOk){
             // $('.right .btn a').eq(1).css('background','#000');
             $('.top .car').show();
+            //禁止屏幕生成滚动条
+            $('body').addClass('hidden');
+            // 自动生成列表
             var nr=`
             <img src="./upload/${pics[sy].sSrc}" alt="" class="fl">
             <div class="fl m">
@@ -278,6 +286,7 @@
             })
             // 关闭购物车
             $('.top .car .close').on('click',function(){
+                $('body').removeClass('hidden');
                 $('.top .car').hide();
             })
             //设置ul的高度
@@ -292,6 +301,8 @@
             }
         }
     });
+
+    //购物车之我的账户
     
 
 
