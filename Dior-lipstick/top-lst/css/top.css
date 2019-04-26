@@ -425,6 +425,7 @@
   height: 100%;
   top: 0;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
 }
 .top .car .playCar {
   width: 550px;
@@ -439,6 +440,7 @@
   font-size: 24px;
   text-align: right;
   margin-right: 28px;
+  margin-left: 480px;
   cursor: pointer;
 }
 .top .car .playCar ul.up {
@@ -448,9 +450,9 @@
   border-bottom: 1px solid #ccc;
 }
 .top .car .playCar ul.up li {
-  width: 80px;
+  width: 90px;
   text-align: center;
-  margin: 0 49px;
+  margin: 0 44px;
 }
 .top .car .playCar div.down {
   overflow: auto;
@@ -495,6 +497,166 @@
   color: #fff;
   cursor: pointer;
 }
+.top .car .playCar div.down .empty1 {
+  padding-top: 54px;
+  text-align: center;
+  color: #000;
+}
+.top .car .playCar div.down ul.d2 {
+  background-color: #f6f6f6;
+}
+.top .car .playCar div.down ul.d2 a {
+  display: block;
+}
+.top .car .playCar div.down ul.d2 h2 {
+  padding-top: 54px;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+}
+.top .car .playCar div.down ul.d2 li:nth-child(1) {
+  text-align: center;
+  background-color: #fff;
+  padding-bottom: 50px;
+}
+.top .car .playCar div.down ul.d2 li:nth-child(1) p {
+  line-height: 53px;
+}
+.top .car .playCar div.down ul.d2 li:nth-child(1) a.login {
+  margin-left: 221px;
+  width: 100px;
+  line-height: 48px;
+  border-radius: 24px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+.top .car .playCar div.down ul.d2 li:nth-child(2) a.register {
+  width: 130px;
+  margin-left: 209px;
+  margin-top: 25px;
+  line-height: 46px;
+  text-align: center;
+  border-radius: 23px;
+  border: 1px solid #000;
+}
+.top .car .playCar div.down ul.d3 {
+  padding-top: 50px;
+  color: #000000;
+}
+.top .car .playCar div.down ul.d3 a {
+  display: inline-block;
+}
+.top .car .playCar div.down ul.d3 li {
+  position: relative;
+  margin-bottom: 30px;
+}
+.top .car .playCar div.down ul.d3 li img {
+  width: 190px;
+}
+.top .car .playCar div.down ul.d3 li div.basket {
+  width: 285px;
+  margin-left: 33px;
+}
+.top .car .playCar div.down ul.d3 li div.basket p {
+  width: 241px;
+  margin-top: 17px;
+  line-height: 22px;
+  font-size: 15px;
+}
+.top .car .playCar div.down ul.d3 li div.basket p a {
+  color: #000000;
+}
+.top .car .playCar div.down ul.d3 li div.basket span {
+  display: block;
+  width: 184px;
+  line-height: 22px;
+  font-size: 15px;
+}
+.top .car .playCar div.down ul.d3 li div.basket .left i {
+  line-height: 50px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.top .car .playCar div.down ul.d3 li div.basket .left a.del {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  text-decoration: underline;
+}
+.top .car .playCar div.down ul.d3 li div.basket .right i {
+  line-height: 50px;
+  display: block;
+  text-align: right;
+  margin-right: 12px;
+}
+.top .car .playCar div.down ul.d3 li div.basket .right button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #090909;
+  border-radius: 50%;
+  font-size: 24px;
+  margin-left: 15px;
+  margin-top: 0px;
+  background-color: #fff;
+  line-height: 28px;
+  outline: 0;
+  cursor: pointer;
+}
+.top .car .playCar div.down ul.d3 li div.basket .right button.reduce {
+  font-size: 18px;
+  cursor: default;
+}
+.top .car .playCar div.down ul.d3 li span.love {
+  position: absolute;
+  top: 13px;
+  left: 160px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.top .car .playCar div.down ul.d3 li:last-child {
+  height: 201px;
+  text-align: center;
+}
+.top .car .playCar div.down ul.d3 li:last-child .price {
+  line-height: 69px;
+  background-color: #f6f6f6;
+}
+.top .car .playCar div.down ul.d3 li:last-child button {
+  margin-top: 25px;
+  width: 100px;
+  line-height: 48px;
+  border-radius: 24px;
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.top .car .playCar div.down ul.d3 li:last-child button:hover {
+  font-weight: 700;
+}
+.top .car .playCar div.down .empty3 {
+  text-align: center;
+}
+.top .car .playCar div.down .empty3 p {
+  padding-top: 56px;
+  padding-bottom: 20px;
+  font-size: 15px;
+  color: #000000;
+}
+.top .car .playCar div.down .empty3 button {
+  width: 130px;
+  height: 46px;
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 23px;
+  cursor: pointer;
+}
+.top .car .playCar div.down .empty3 button:hover {
+  font-weight: 700;
+}
 .toTop {
   position: fixed;
   bottom: 5px;
@@ -509,8 +671,12 @@
   text-align: center;
   cursor: pointer;
 }
+.ccc {
+  border-color: #cecece !important;
+  color: #cecece;
+}
 .active {
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #000;
 }
 .hidden {
   overflow: hidden;
