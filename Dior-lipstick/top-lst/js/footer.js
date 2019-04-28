@@ -50,9 +50,7 @@
 
     video.controls = false;
     // 点击画面的播放与暂停
-    videoImg.addEventListener('click', function (e) {
-        videoController();
-    });
+    videoImg.addEventListener('click', videoController);
     // 点击控件的播放与暂停
     var controlBtn = document.querySelector('.footer .controller-bar div:nth-child(1)');
 
@@ -64,7 +62,7 @@
         e.stopPropagation();
     };
     // 方法封装
-    var videoController = function() {
+    function videoController() {
         reload.style.display = 'none';
         controller.style.display = 'block';
 
@@ -108,15 +106,23 @@
     // 点击进度条
     progress.addEventListener('click', function (e) {
         e.stopPropagation();
-        if (video.paused || video.ended) {
-            reload.style.display = 'none';
-            playPause.style.display = 'block';
-        }
-        
         var pos = e.offsetX / this.offsetWidth;
         video.currentTime = pos * duration;
+        ifPlay();
     });
-
+    // 是否在暂停活播放结束
+    function ifPlay() {
+        if (video.paused && video.ended) {
+            reload.style.display = 'block';
+            playPause.style.display = 'none';
+        } else if (video.paused) {
+            reload.style.display = 'none';
+            playPause.style.display = 'block';
+        } else {
+            reload.style.display = 'none';
+            playPause.style.display = 'none';
+        }
+    }
     // 点击重新加载
     reload.onclick = function() {
         this.style.display = 'none';
@@ -126,8 +132,24 @@
     // 点击进入全屏
     var fullScreen = document.querySelector('.footer .fullScreen');
     fullScreen.onclick = function() {
+        videoImg.removeEventListener('click', videoController);
         video.webkitRequestFullScreen();
     }
+    // 监听退出全屏
+    function checkFull() {
+        var isFull = document.webkitIsFullScreen;
+        if (isFull === undefined) {
+            isFull = false;
+        }
+        return isFull;
+    }
+
+    window.onresize = function () {
+        if (!checkFull()) {
+            videoImg.addEventListener('click', videoController);
+            ifPlay();
+        }
+    };
 
     // 声音处理
     var scroll = document.querySelector('.footer .controller-bar .scroll');
