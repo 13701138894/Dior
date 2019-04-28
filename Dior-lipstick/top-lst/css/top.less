@@ -2,8 +2,17 @@
     display: none;
 }
 
-.top {
-    width: 1349px;
+body {
+    // 测试用高度
+    height: 5000px;
+}
+
+@w:1328px;
+// @w: 1200px;
+
+div.top {
+    width: @w;
+    margin: 0 auto;
 
     .upper {
         position: relative;
@@ -73,14 +82,17 @@
 
     //content部分
     .content {
-        width: 1349px;
+        width: 100%;
         margin: 0 auto;
         margin-top: 45px;
-        padding-left: 20px;
+        // padding-left: 20px;
         box-sizing: border-box;
+        display: flex;
         // position: relative;
 
         .left {
+            width: 60%;
+
             .t {
                 margin-bottom: 26px;
 
@@ -88,29 +100,45 @@
                     display: inline-block;
 
                     img {
-                        width: 785px;
+                        // width: 785px;
+                        width: 100%;
                     }
                 }
             }
 
+            // ul {
+            //     width: 806px;
+            //     li {
+            //         float: left;
+            //         margin-right: 21px;
+            //         margin-bottom: 27px;
+
+            //         img {
+            //             width: 382px;
+            //         }
+            //     }
+            // }
+
             ul {
-                width: 806px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
 
                 li {
-                    float: left;
-                    margin-right: 21px;
+                    width: 49%;
                     margin-bottom: 27px;
 
                     img {
-                        width: 382px;
+                        width: 100%;
                     }
                 }
             }
         }
 
         .right {
-            width: 448px;
-            margin-left: 52px;
+            width: @w*0.34;
+            margin-left: @w*0.06;
 
             .tittle {
                 padding-bottom: 20px;
@@ -118,8 +146,13 @@
                 line-height: 35px;
                 border-bottom: 1px solid #ccc;
 
+                p {
+                    letter-spacing: 2px;
+                }
+
                 span {
                     font-size: 16px;
+                    word-spacing: 5px;
                 }
             }
 
@@ -304,7 +337,7 @@
             .btn {
                 .dg {
                     display: inline-block;
-                    width: 374px;
+                    width: 80%;
                     line-height: 60px;
                     border-radius: 30px;
                     background-color: #000;
@@ -375,10 +408,11 @@
     // 刻字部分
     .kz {
         width: 100%;
-        height: 5000px;
+        height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         position: fixed;
         top: 0;
+        left: 0;
         z-index: 100;
 
         .wrapper {
@@ -486,6 +520,7 @@
         height: 100%;
         position: fixed;
         top: 0;
+        left: 0;
         background-color: rgba(0, 0, 0, 0.5);
 
         .wrapper {
@@ -524,14 +559,16 @@
 
     .scroll {
         position: fixed !important;
-        right: 23px;
+        z-index: 10;
+        // right: 23px;
         // top: 20px;
     }
 
     // color生成li的属性
     .sc {
         float: left;
-        margin-right: 12px;
+        // margin-right: 12px;
+        margin-right: 1.7%;
         margin-bottom: 12px;
 
         span {
@@ -561,74 +598,93 @@
         width: 100%;
         height: 100%;
         top: 0;
+        left: 0;
         background: rgba(0, 0, 0, 0.5);
         z-index: 10000;
+
         // overflow: auto;
         .playCar {
-            width: 550px;
+            // width: 550px;
+            width: @w*0.41;
             height: 100%;
             background: #fff;
             position: absolute;
-            right: 0;
+            // right: 0;
             top: 0;
+
             .close {
                 line-height: 79px;
                 font-size: 24px;
-                text-align: right;
-                margin-right: 28px;
-                margin-left: 480px;
+                // text-align: right;
+                // margin-right: 28px;
+                // margin-left: 480px;
+                margin-left: 87%;
                 cursor: pointer;
             }
+
             ul.up {
                 width: 100%;
                 line-height: 45px;
                 border-top: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
+
                 li {
-                    width: 90px;
+                    width: 20%;
                     text-align: center;
-                    margin: 0 44px;
+                    margin: 0 6%;
+
                 }
             }
+
             div.down {
                 overflow: auto;
+
                 // height: 100%;
                 // 我的收藏部分显示
-                ul.d1{
+                ul.d1 {
                     li {
                         margin-top: 50px;
                         margin-bottom: 60px;
                         margin-left: 10px;
                         overflow: hidden;
-                        img{
-                            width: 190px;
+
+                        img {
+                            // width: 190px;
+                            width: 35%;
                             cursor: pointer;
                             // margin-top: -30px;
                         }
+
                         div.m {
                             color: #000;
                             width: 184px;
                             margin-top: 34px;
-                            margin-left: 35px;
+                            // margin-left: 35px;
+                            margin-left: 6.7%;
                             line-height: 20px;
                             font-size: 15px;
+
                             i.p2 {
                                 display: block;
                             }
+
                             span {
                                 display: block;
                                 line-height: 42px;
                             }
+
                             a.del {
                                 text-decoration: underline;
                                 color: #000;
                             }
                         }
+
                         .bag {
                             width: 49px;
                             line-height: 49px;
                             margin-top: 79px;
-                            margin-right: 60px;
+                            // margin-right: 60px;
+                            margin-right: 8%;
                             border-radius: 50%;
                             background: #000;
                             text-align: center;
@@ -637,34 +693,42 @@
                         }
                     }
                 }
+
                 // 我的收藏之空替换部分
-                .empty1{
+                .empty1 {
                     padding-top: 54px;
                     text-align: center;
                     color: #000;
                 }
+
                 // 我的账户部分
                 ul.d2 {
                     background-color: #f6f6f6;
+
                     // height: 100%;
-                    a{
+                    a {
                         display: block;
                     }
-                    h2{
+
+                    h2 {
                         padding-top: 54px;
                         font-size: 25px;
                         font-weight: 400;
                         text-align: center;
                     }
-                    li:nth-child(1){
+
+                    li:nth-child(1) {
                         text-align: center;
                         background-color: #fff;
                         padding-bottom: 50px;
-                        p{
+
+                        p {
                             line-height: 53px;
                         }
-                        a.login{
-                            margin-left: 221px;
+
+                        a.login {
+                            // margin-left: 221px;
+                            margin-left: 42%;
                             // margin-bottom: 50px;
                             width: 100px;
                             line-height: 48px;
@@ -674,9 +738,11 @@
                             text-align: center;
                         }
                     }
-                    li:nth-child(2){
+
+                    li:nth-child(2) {
+
                         // height: 100%;
-                        a.register{
+                        a.register {
                             width: 130px;
                             margin-left: 209px;
                             margin-top: 25px;
@@ -687,60 +753,80 @@
                         }
                     }
                 }
+
                 // 购物篮部分
                 ul.d3 {
                     padding-top: 50px;
                     color: #000000;
-                    a{
+
+                    a {
                         display: inline-block;
                     }
-                    li{
+
+                    li {
                         position: relative;
                         margin-bottom: 30px;
-                        img{
-                            width: 190px;
+
+                        a.fl {
+                            width: 36%;
+
+                            img {
+                                // width: 190px;
+                                width: 100%;
+                            }
                         }
-                        div.basket{
-                            width: 285px;
-                            margin-left: 33px;
-                            // margin-right: 20px;
-                            
-                            p{
-                                width: 241px;
+
+
+                        div.basket {
+                            // width: 285px;
+                            width: 54%;
+                            // margin-left: 33px;
+                            margin-left: 6.2%;
+
+                            p {
+                                width: 84.5%;
+                                // width: 241px;
                                 margin-top: 17px;
                                 line-height: 22px;
                                 font-size: 15px;
-                                a{
+
+                                a {
                                     color: #000000;
                                 }
                             }
-                            span{
-                                display:block;
-                                width: 184px;
+
+                            span {
+                                display: block;
+                                // width: 184px;
+                                width: 64.5%;
                                 line-height: 22px;
-                                font-size: 15px; 
+                                font-size: 15px;
                             }
-                            .left{
-                                i{
+
+                            .left {
+                                i {
                                     line-height: 50px;
                                     font-weight: 700;
                                     font-size: 12px;
                                 }
-                                a.del{
+
+                                a.del {
                                     display: block;
                                     font-size: 16px;
                                     color: #000;
                                     text-decoration: underline;
                                 }
                             }
-                            .right{
-                                i{
+
+                            .right {
+                                i {
                                     line-height: 50px;
                                     display: block;
                                     text-align: right;
                                     margin-right: 12px;
                                 }
-                                button{
+
+                                button {
                                     width: 30px;
                                     height: 30px;
                                     border: 1px solid #090909;
@@ -753,13 +839,15 @@
                                     outline: 0;
                                     cursor: pointer;
                                 }
-                                button.reduce{
+
+                                button.reduce {
                                     font-size: 18px;
                                     cursor: default;
                                 }
                             }
                         }
-                        span.love{
+
+                        span.love {
                             position: absolute;
                             top: 13px;
                             left: 160px;
@@ -767,14 +855,17 @@
                             cursor: pointer;
                         }
                     }
-                    li:last-child{
+
+                    li:last-child {
                         height: 201px;
                         text-align: center;
-                        .price{
+
+                        .price {
                             line-height: 69px;
                             background-color: #f6f6f6;
                         }
-                        button{
+
+                        button {
                             margin-top: 25px;
                             width: 100px;
                             line-height: 48px;
@@ -785,21 +876,25 @@
                             border: none;
                             cursor: pointer;
                         }
-                        button:hover{
+
+                        button:hover {
                             font-weight: 700;
                         }
                     }
                 }
+
                 // 购物篮之空替换部分
-                .empty3{
+                .empty3 {
                     text-align: center;
-                    p{
+
+                    p {
                         padding-top: 56px;
                         padding-bottom: 20px;
                         font-size: 15px;
                         color: #000000;
                     }
-                    button{
+
+                    button {
                         width: 130px;
                         height: 46px;
                         outline: none;
@@ -808,6 +903,7 @@
                         border-radius: 23px;
                         cursor: pointer;
                     }
+
                     button:hover {
                         font-weight: 700;
                     }
@@ -815,13 +911,147 @@
             }
         }
     }
+
+    //比较部分
+    .lipstick_diff {
+        width: 100%;
+        height: 100%;
+        .cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 32px;
+            width: 900px;
+            height: 571px;
+            // margin: 0 auto;
+            overflow: auto;
+            background-color: #fff;
+            border-radius: 5px;
+            z-index: 101;
+            left: 50%;
+            transform: translate(-50%);
+            .up{
+                text-align: center;
+                h3{
+                    padding-top: 43px;
+                    font-size: 27px;
+                    font-weight: 400;
+                    color: #000;
+                }
+                p{
+                    font-size: 14px;
+                    color: #000;
+                    line-height: 66px;
+                }
+                span {
+                    position: absolute;
+                    top: 40px;
+                    right: 4.6%;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+            }
+            .down {
+                // border-top: 1px solid #000;
+                display:flex;
+                ul{
+                    padding-top: 26px;
+                    margin-left: 7%;
+                    padding-left: 3%;
+                    margin-right: 10%;
+                    border-bottom: 1px solid #e5e5e5;
+                    padding-bottom: 10px;
+                    li {
+                        margin-right: 12px;
+                        img {
+                            margin-left: 2px;
+                        }
+                    }
+                }
+                .left{
+                    flex:1;
+                }
+                .diff{
+                    position: relative;
+                    margin-top: 50px;
+                    width: 190px;
+                    height: 175px;
+                    img {
+                        height: 100%;
+                    }
+                    .drag{
+                        width: 50%;
+                        height: 100%;
+                        position: absolute;
+                        overflow: hidden;
+                        left: 0;
+                        top: 0;
+                        border-right: 1px solid #fff;
+                    }
+                    span {
+                        display: inline-block;
+                        font-size: 30px;
+                        position: absolute;
+                        top:174px;
+                        left:50%;
+                        color: #000;
+                        transform: translate(-50%);
+                    }
+                }
+                .right{
+                    flex:1;
+                }
+                .diff_ms{
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        margin-left: 11%;
+                        margin-top: 22px;
+                    }
+                    div{
+                        padding-top: 24px;
+                        margin-left: 5%;
+                        p {
+                            height: 17px;
+                        }
+                    }
+                }
+                a.xz_btn {
+                    display: inline-block;
+                    width: 76%;
+                    line-height: 46px;
+                    border-radius: 23px;
+                    border: 1px solid #000;
+                    box-sizing: border-box;
+                    margin-left: 12%;
+                    margin-top: 15px;
+                    text-align: center;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+
+
+    }
+
 }
+
 
 //回到顶部
 .toTop {
     position: fixed;
     bottom: 5px;
-    right: 12px;
+    // right: 12px;
     font-size: 20px;
     font-weight: 200;
     background-color: #fff;
@@ -831,18 +1061,21 @@
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
+    z-index: 10000;
 }
+
 //灰色
-.ccc{
+.ccc {
     border-color: #cecece !important;
     color: #cecece;
 }
+
 //购物车导航栏点击效果
 .active {
     border-bottom: 2px solid #000;
 }
 
 //全屏禁止滚动条生成
-.hidden{
+.hidden {
     overflow: hidden;
 }

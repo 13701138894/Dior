@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="全新DIOR迪奥烈艳蓝金挚红唇膏 - 唇妆 - 彩妆 | DIOR">
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="https://www.dior.cn/favicon.ico">
+    <!-- <link rel="icon" href="https://www.dior.cn/favicon.ico"> -->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./iconfont/iconfont.css">
     <link rel="stylesheet" href="./css/top.css">
@@ -53,14 +53,14 @@
             </div>
         </div>
         <!-- content部分 -->
-        <div class="content clearfix">
-            <div class="left fl">
+        <div class="content">
+            <div class="left">
                 <div class="t">
                     <a href="javascript:">
                         <img src="./upload/1-t.jpg" alt="">
                     </a>
                 </div>
-                <ul class="clearfix">
+                <ul class="">
                     <li><a href="javascript:">
                             <img src="./upload/1-l.jpg" alt="">
                         </a></li>
@@ -87,7 +87,7 @@
                         </a></li>
                 </ul>
             </div>
-            <div class="right fl">
+            <div class="right">
                 <div class="tittle">
                     <p>全新DIOR迪奥烈艳蓝金挚红唇膏</p>
                     <span>炽色 持妆 轻盈水润</span>
@@ -183,7 +183,6 @@
             </div>
         </div>
         <!-- 购物车部分 -->
-        <!-- <div class="car display"> -->
         <div class="car display">
             <div class="playCar">
                 <div class="close iconfont">&#xe702;</div>
@@ -218,7 +217,7 @@
                     <!-- 我的收藏之空替换部分    -->
                     <div class="empty1 display">我的最爱没有任何作品</div>
                     <!-- 我的账户部分 -->
-                    <ul class="item d2 display">
+                    <ul class="item d2 ">
                         <li>
                             <h2>登录</h2>
                             <p>登录我的账户</p>
@@ -241,11 +240,11 @@
                                 </p>
                                 <span>色泽饱满浓郁，质地轻盈舒悦</span>
                                 <div class="fl left">
-                                    <i>￥320.00</i>
+                                    <i>￥<em>320.00</em></i>
                                     <a href="javascript:" class="del">删除</a>
                                 </div>
                                 <div class="fr right">
-                                    <i>数量：1</i>
+                                    <i>数量：<em>1</em></i>
                                     <button class="reduce iconfont ccc">&#xe60f;</button>
                                     <button class="add iconfont">&#xe66e;</button>
                                 </div>
@@ -254,7 +253,7 @@
                             <span class="iconfont display love">&#xe608;</span>
                         </li> -->
                         <li class="last">
-                            <div class="price">总计：<strong>￥630.00</strong></div>
+                            <div class="price">总计：<strong>￥<em>0</em>.00</strong></div>
                             <button>结账</button>
                         </li>
                     </ul>
@@ -266,6 +265,53 @@
                 </div>
             </div>
         </div>
+        <!-- 比较部分 -->
+        <div class="lipstick_diff display">
+            <div class="cover"></div>
+            <div class="wrapper">
+                <div class="up">
+                    <h3>比较颜色</h3>
+                    <p>请选择两种颜色，并滑动游标以作比较</p>
+                    <span class="iconfont">&#xe702;</span>
+                </div>
+                <div class="down">
+                    <div class="left">
+                        <!-- <ul></ul> -->
+                        <div class="diff_ms clearfix">
+                            <img src="./upload/1.jpg" alt="" class="fl">
+                            <!-- <img src="./upload/1.jpg" alt=""> -->
+                            <div class="fl">
+                                <p class="en">000 Ultra light 47</p>
+                                <p class="cn">白色</p>
+                            </div>
+                        </div>
+                        <a href="javascript:" class="xz_btn">选择</a>
+                    </div>
+                    <div class="diff">
+                        <img src="" alt="">
+                        <div class="drag">
+                            <img src="" alt="">
+                        </div>
+                        <span class="iconfont">&#xe604;</span>
+                    </div>
+                    <div class="right">
+                        <!-- <ul></ul> -->
+                        <div class="diff_ms clearfix rightIsOk1">
+                            <img src="./upload/1.jpg" alt="" class="fl">
+                            <!-- <img src="./upload/1.jpg" alt=""> -->
+                            <div class="fl">
+                                <p class="en">000 Ultra light 47</p>
+                                <p class="cn">白色</p>
+                            </div>
+                        </div>
+                        <a href="javascript:" class="xz_btn rightIsOk2">选择</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
     <div class="toTop iconfont display">&#xe624;</div>
     <script src="./lib/jquery-1.12.4.min.js"></script>

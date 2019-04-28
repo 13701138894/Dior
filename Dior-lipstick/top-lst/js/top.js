@@ -60,7 +60,7 @@
         `
         $('<li class="sc"></li>').appendTo('.color ul').html(src)
     }
-    var sy = 0;
+    var sy = 10;
     $('.color li').on('click', function () {
         $(this).addClass('qq').siblings().removeClass('qq');
         var index = $(this).index();
@@ -84,6 +84,26 @@
         $('.left li').eq(1).find('img').attr('src', './upload/' + rSrc);
     })
 
+
+    // color模块默认点击状体
+    colorInitialise();
+    function colorInitialise() {
+        $('.color li').eq(10).find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent');
+        $('.color li').eq(10).addClass('qq').siblings().removeClass('qq');
+        //改变en描述
+        $('up .ms .en').text(datas[10].num);
+        $('up .ms .cn').text(datas[10].color);
+        //up图片链接更改
+        var src = pics[10].src;
+        $('.up img').attr('src', './upload/' + src);
+        //左侧图片链接改变
+        var tSrc = pics[10].tSrc;
+        var lSrc = pics[10].lSrc;
+        var rSrc = pics[10].rSrc;
+        $('.left .t').find('img').attr('src', './upload/' + tSrc);
+        $('.left li').eq(0).find('img').attr('src', './upload/' + lSrc);
+        $('.left li').eq(1).find('img').attr('src', './upload/' + rSrc);
+    };
 
 
     $('.color li').on('mouseenter', function () {
@@ -179,7 +199,9 @@
         var h1 = $(window).scrollTop();
         // 回到顶部按钮出现与隐藏
         if (h1 >= 100) {
-            $('.toTop').show().css('z-index', 10000);
+            var topLeft = (window.innerWidth - $('.top').width()) / 2 + $('.top').width() * 0.95;
+            $('.toTop').show().css('left', topLeft);
+            // console.log(topLeft)
 
         } else {
             $('.toTop').hide();
@@ -189,20 +211,55 @@
             $('body,html').scrollTop(0);
         })
 
-        var rightHeight = $('.content .right').height();
+
+        // right模块定位功能实现
+        // var rightHeight = $('.content .right').height();
+        // console.log(rightHeight,allHeight);
+        // h1→window卷去距离
+        // allHeight→top高度
+        // rightHeight→右边盒子高度
+        // h为right盒子到顶部距离
+        // upperHeight为upper盒子高度
+        // 设置right高度，因为改为弹性布局，若不设置高度，默认继承父盒子高度
         var allHeight = $('.top').height();
+        var rightBoxs = $('.right').children('div');
+        var rightHeight = 0
+        var upperHeight = $('.upper').height();
+        for (var i = 0; i < rightBoxs.length; i++) {
+            var height = rightBoxs.eq(i).height();
+            // console.log(height);
+            rightHeight += height;
+        }
+        // console.log(rightHeight)
+
+        //卷去的距离大于top盒子与right盒子差值时
         if (h1 >= allHeight - rightHeight) {
+            // 取消绝对定位
             $('.content .right').removeClass('scroll');
-            $('.content .right').offset({ top: allHeight - rightHeight + 10 });
-            // console.log(h1, rightHeight, rightHeight)
+            $('.content .right').offset({ top: allHeight - rightHeight - upperHeight });
+            $('.content .right').css('left', 0);
+            // console.log(h1, allHeight,rightHeight)
+            // console.log('aaa',$('.right').width())
         } else if (h1 >= h) {
+            // 触发定位
             $('.content .right').addClass('scroll');
             $('.content .right').offset({ top: h1 + 10 });
+            // 计算盒子的位置，（屏幕宽度-版心宽度）/2+
+            // var left=(window.innerWidth-$('.top').width())/2+$('.top').width()*0.6;
+            // 浏览器时下窗口文档body的宽度$(document.body).width()
+            var left = ($(document.body).width() - $('.top').width()) / 2 + $('.top').width() * 0.6;
+            // $('.content .right').css({left:left,margin:0});
+            $('.content .right').css('left', left);
+            // console.log('bbb',$('.right').width());
         }
         else {
             $('.content .right').removeClass('scroll');
             $('.content .right').offset({ top: h });
+            $('.content .right').css('left', 0);
         };
+        // console.log(h1, allHeight-rightHeight)
+        // console.log(h1, allHeight,rightHeight)
+
     }
 
     // 定制刻字功能
@@ -242,6 +299,18 @@
         $('.kz').hide();
     })
 
+    //尝试失败
+    // function fn(){
+    //     $('.kz input').val('');
+    //     $('.kz .count').text('8');
+    //     $('body').removeClass('hidden');
+    //     $('.kz').hide();
+    // }
+    // $('.kz .close,.kz  .cancel,.kz ').on('click',fn)
+    // $('.kz .wrapper').off('click',fn);
+
+
+
     // 免费送货及退换
     $('.content .right .btn .th').on('click', function () {
         $('.tuihuan').show();
@@ -259,10 +328,16 @@
             $('.top .car').show();
             //禁止屏幕生成滚动条
             $('body').addClass('hidden');
+            //控制playCar位置
+            var playCarPosition = ($(window).width() - $('.top').width()) / 2;
+            $('.top .car .playCar').css('right', playCarPosition);
             // 显示我的收藏
-            $('.car .down .d1').removeClass('display');
+            $('.car .down .d1').removeClass('display').siblings().addClass('display');
             // 我的收藏之空替换隐藏
             $('.car .down .d1').next().addClass('display');
+
+
+
             // 自动生成列表
             var nr = `
             <img src="./upload/${pics[sy].sSrc}" alt="" class="fl">
@@ -299,6 +374,18 @@
                     $('.top .car .up li').eq(0).find('i').text('(' + cou + ')');
                 }
             })
+
+
+
+
+            //我的收藏之点击手提袋加入购物篮功能
+            $('.car .d1 .bag')[0].addEventListener('click', function () {
+                var that = this;
+
+            })
+
+
+
             //设置ul的高度
             var diffHeight = $(window).innerHeight() - $('.car .close').height() - $('.car .up').height();
             $('.top .car .down').height(diffHeight);
@@ -311,10 +398,20 @@
                 $('.top .car .up li').eq(0).find('i').text('(' + cou + ')');
             }
 
-
-
         }
     });
+    // 我的收藏是否为空判断函数
+    function scIsEmpty() {
+        var cou = $('.top .car .down .d1').find('li').length;
+        if (cou == 0) {
+            $('.top .car .up li').eq(0).find('i').text('');
+            // 我的收藏隐藏
+            $('.car .down .d1').addClass('display');
+            // 我的收藏之空替换显示
+            $('.car .down .d1').next().removeClass('display');
+        }
+    };
+
 
     // 关闭购物车
     $('.top .car .close').on('click', function () {
@@ -322,23 +419,19 @@
         $('.top .car').hide();
     })
 
-    //购物车之购物篮部分
-    $('.right .btn .dg').on('click', function () {
-        //判断是否有选中的商品
-        var isOk = $('.right .color li').hasClass('qq');
-        if (isOk) {
-            // 购物篮显示
-            $('.top .car').show();
-            //禁止屏幕生成滚动条
-            $('body').addClass('hidden');
-            // 购物篮部分显示
-            $('.car .down .d3').removeClass('display');
-            // 购物篮之空替换隐藏
-            $('.car .down .d3').next().addClass('display');
-            // 导航栏显示点击效果
-            $('.top .car .up li').eq(2).addClass('active').siblings().removeClass('active');
-            // 生成购物篮内容
-            var nr = `
+    // 购物篮生成函数
+    function draw_d3() {
+        // 购物篮部分显示
+        $('.car .down .d3').removeClass('display').siblings().addClass('display');
+        //控制playCar位置
+        var playCarPosition = ($(window).width() - $('.top').width()) / 2;
+        $('.top .car .playCar').css('right', playCarPosition);
+        // 购物篮之空替换隐藏
+        $('.car .down .d3').next().addClass('display');
+        // 导航栏显示点击效果
+        $('.top .car .up li').eq(2).addClass('active').siblings().removeClass('active');
+        // 生成购物篮内容
+        var nr = `
                     <a href="javascript:" class="fl">
                         <img src="./upload/${pics[sy].cSrc}" alt="">
                     </a>
@@ -348,7 +441,7 @@
                         </p>
                         <span>色泽饱满浓郁，质地轻盈舒悦</span>
                         <div class="fl left">
-                            <i>￥${datas[sy].price}</i>
+                            <i>￥<em>${datas[sy].price}</em></i>
                             <a href="javascript:" class="del">删除</a>
                         </div>
                         <div class="fr right">
@@ -360,42 +453,68 @@
                     <span class="iconfont love">&#xe82a;</span>
                     <span class="iconfont display love">&#xe608;</span>
                 `;
-            // var newLi = $('<li class="clearfix"></li>').html(nr)[0];
-            // var lastLi = $('.car .down .d3 .last')[0];
-            // $('.car .down .d3')[0].insertBefore(newLi, lastLi);
 
-            var newLi = $('<li class="clearfix"></li>').html(nr);
-            $('.car .down .d3 .last').before(newLi);
+
+        var newLi = $('<li class="clearfix"></li>').html(nr);
+        $('.car .down .d3 .last').before(newLi);
+        d3_price();
+        // tab切换栏数量更新
+        $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
+        // 设置ul高度
+        var diffHeight = $(window).innerHeight() - $('.car .close').height() - $('.car .up').height();
+        $('.top .car .down').height(diffHeight);
+        $('.top .car .down .d3').height(diffHeight);
+
+        // // 购物篮之删除功能
+        $('.top .car .d3 .del').click(function () {
+            $(this).parent().parent().parent().remove();
+            // li的数量
+            var cou = $('.top .car .down .d3').find('li').length;
             // tab切换栏数量更新
             $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
-            // 设置ul高度
-            var diffHeight = $(window).innerHeight() - $('.car .close').height() - $('.car .up').height();
-            $('.top .car .down').height(diffHeight);
-            $('.top .car .down .d3').height(diffHeight);
-            // 购物篮之删除功能
-            $('.top .car .d3 .del').click(function () {
-                $(this).parent().parent().parent().remove();
-                // li的数量
-                var cou = $('.top .car .down .d3').find('li').length;
-                // tab切换栏数量更新
-                $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
-                if (cou == 1) {
-                    $('.top .car .up li').eq(2).find('i').text('0');
-                    // 购物篮隐藏
-                    $('.car .down .d3').addClass('display');
-                    // 购物篮之空替换显示
-                    $('.car .down .d3').next().removeClass('display');
-                } else {
-                    // 购物篮显示
-                    $('.car .down .d3').removeClass('display');
-                    // 购物篮之空替换隐藏
-                    $('.car .down .d3').next().addClass('display');
+            if (cou == 1) {
+                $('.top .car .up li').eq(2).find('i').text('0');
+                // 购物篮隐藏
+                $('.car .down .d3').addClass('display');
+                // 购物篮之空替换显示
+                $('.car .down .d3').next().removeClass('display');
+            } else {
+                // 购物篮显示
+                $('.car .down .d3').removeClass('display');
+                // 购物篮之空替换隐藏
+                $('.car .down .d3').next().addClass('display');
+            }
+            d3_price();
+        })
+    }
 
-                    // $('.top .car .up li').eq(3).find('i').text('(' + cou + ')');
-                }
-            })
+    //购物车之购物篮部分
+    $('.right .btn .dg').on('click', function () {
+        //判断是否有选中的商品
+        var isOk = $('.right .color li').hasClass('qq');
+        if (isOk) {
+            $('.top .car').show();
+            //禁止屏幕生成滚动条
+            $('body').addClass('hidden');
+            draw_d3();
         }
+
+
     })
+
+
+
+    //购物篮是否为空判断函数
+    function basketIsEmpty() {
+        var cou = $('.top .car .down .d3').find('li').length;
+        if (cou == 1) {
+            $('.top .car .up li').eq(2).find('i').text('0');
+            // 购物篮隐藏
+            $('.car .down .d3').addClass('display');
+            // 购物篮之空替换显示
+            $('.car .down .d3').next().removeClass('display');
+        }
+    }
 
     //购物车之购物篮部分点击+，数量加1
     $('.car .down .d3').on('click', '.add', function () {
@@ -406,6 +525,7 @@
         $(this).prev().removeClass('ccc').css('cursor', 'pointer');
         // tab切换栏数量更新
         $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
+        d3_price();
     });
     //购物车之购物篮部分点击-，数量减1，并判断是否数量为1
     $('.car .down .d3').on('click', '.reduce', function () {
@@ -423,12 +543,14 @@
             // tab切换栏数量更新
             $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
         }
+        d3_price();
 
 
     });
 
+    // 购物篮数量显示函数
     function d3_count() {
-        var counts = $('.car .down .d3 em');
+        var counts = $('.car .down .d3 .right em');
         var num = 0;
         for (var i = 0; i < counts.length; i++) {
             num = num + parseInt(counts.eq(i).text());
@@ -436,6 +558,162 @@
         }
         return num;
     }
+
+    // 购物篮价格计算函数
+    function d3_price() {
+        // 获取商品数量（-1不含最后总价li）
+        var len = $('.car .down .d3 li').length - 1;
+        var all_price = 0;
+        for (var i = 0; i < len; i++) {
+            var price = parseInt($('.car .down .d3 li').eq(i).find('.left i em').text());
+            var count = parseInt($('.car .down .d3 li').eq(i).find('.right i em').text());
+            all_price = all_price + price * count;
+        }
+        // console.log(all_price)
+        $('.car .down .d3 .last').find('em').text(all_price);
+        return all_price;
+    }
+
+    //购物车导航栏切换事件
+    $('.car .up').on('click', 'li', function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        var index = $(this).index();
+        $('.car .down ul').eq(index).removeClass('display').siblings().addClass('display');
+        if (index == 0) {
+            scIsEmpty();
+
+        } else if (index == 2) {
+            basketIsEmpty();
+
+        }
+
+
+
+    })
+
+
+
+
+    //比较功能实现
+    // 克隆两个color模块
+    var ul_left = $('.top .content .color ul')[0].cloneNode(true);
+    var ul_right = $('.top .content .color ul')[0].cloneNode(true);
+    //ul_left插入left模块
+    $(ul_left).prependTo('.top .lipstick_diff .down .left');
+    // // ul_right插入right模块,且取消右边模块选择
+    $(ul_right).prependTo('.top .lipstick_diff .down .right');
+    // 清除拷贝过来的圈圈颜色
+    $('.top .lipstick_diff .down').find('.qq').removeClass('qq').find('span').css('border-color', 'transparent');
+
+
+    // 点击比较按钮弹出比较页面
+    var key = $('.top .color .diff').on('click', function () {
+        // 显示比较功能模块
+        $('.top .lipstick_diff').show();
+        $('body').addClass('hidden');
+        // 更改底部小图链接
+        var initialKey = $('.top .right .color').find('.qq').index();
+        var sSrc = pics[initialKey].src;
+        $('.top .lipstick_diff .down .left .diff_ms img').attr('src', './upload/' + sSrc);
+        //添加圈圈特效
+        $('.top .lipstick_diff .down .left li').eq(initialKey).find('span').css('border-color', '#000')
+            .end().siblings().find('span').css('border-color', 'transparent')
+        //更改下部颜色描述
+        var num = datas[initialKey].num;
+        var color = datas[initialKey].color;
+        $('.top .lipstick_diff .down .left .diff_ms .en').text(num);
+        $('.top .lipstick_diff .down .left .diff_ms .cn').text(color);
+        //可拖拽盒子照片生成
+        var dSrc = pics[initialKey].diff;
+        $('.top .lipstick_diff .down .drag img').attr('src', './upload/' + dSrc);
+        //右侧盒子下部模块隐藏
+        $('.top .lipstick_diff .right .rightIsOk1').css('visibility','hidden');
+        $('.top .lipstick_diff .right .rightIsOk2').addClass('ccc').css('cursor','default');
+        //清除右侧盒子的信息（圈圈，及拖拽盒子的底图，及‘.dj’类名）
+        $('.top .lipstick_diff .down').find('.qq').removeClass('qq').find('span').css('border-color', 'transparent');
+        $('.top .lipstick_diff .down .diff>img').attr('src', '');
+        $('.top .lipstick_diff .right li').removeClass('dj');
+    })
+
+    // 点击左侧圆圈进行中间图片切换事件
+    $('.top .lipstick_diff .down .left').on('click', 'li', function () {
+        var key = $(this).index();
+        $(this).find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent')
+        $(this).addClass('dj').siblings().removeClass('dj');
+        //可拖拽盒子照片链接更改
+        var dSrc = pics[key].diff;
+        $('.top .lipstick_diff .down .drag img').attr('src', './upload/' + dSrc);
+        // 更改底部小图链接
+        var sSrc = pics[key].src;
+        $('.top .lipstick_diff .down .left .diff_ms img').attr('src', './upload/' + sSrc);
+        //更改西部颜色描述
+        var num = datas[key].num;
+        var color = datas[key].color;
+        $('.top .lipstick_diff .down .left .diff_ms .en').text(num);
+        $('.top .lipstick_diff .down .left .diff_ms .cn').text(color);
+    })
+
+    // 点击右侧圆圈进行中间图片切换事件
+    $('.top .lipstick_diff .down .right').on('click', 'li', function () {
+        $('.top .lipstick_diff .right .rightIsOk2').removeClass('ccc').css('cursor','pointer');
+        $('.top .lipstick_diff .right .rightIsOk1').css('visibility','visible');
+        var key = $(this).index();
+        $(this).find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent')
+        $(this).addClass('dj').siblings().removeClass('dj');
+        //可拖拽盒子照片链接更改(大盒子)
+        var dSrc = pics[key].diff;
+        $('.top .lipstick_diff .down .diff>img').attr('src', './upload/' + dSrc);
+        // 更改底部小图链接
+        var sSrc = pics[key].src;
+        $('.top .lipstick_diff .down .right .diff_ms img').attr('src', './upload/' + sSrc);
+        //更改西部颜色描述
+        var num = datas[key].num;
+        var color = datas[key].color;
+        $('.top .lipstick_diff .down .right .diff_ms .en').text(num);
+        $('.top .lipstick_diff .down .right .diff_ms .cn').text(color);
+    })
+
+    //点击‘选择按钮’事件
+    $('.top .lipstick_diff .down a.xz_btn').on('click',function(){
+        var index=$(this).siblings('ul').find('.dj').index();
+        console.log(index)
+        var obj1 = pics[index];
+        var obj2 = datas[index];
+        //圈圈特效
+        $('.color li').eq(index).find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent');
+        //改变en描述
+        $('.up .ms .en').text(obj2.num);
+
+        $('.up .ms .cn').text(obj2.color);
+        //up图片链接更改
+        var src = obj1.src;
+        $('.up img').attr('src', './upload/' + src);
+        //左侧图片链接改变
+        var tSrc = obj1.tSrc;
+        var lSrc = obj1.lSrc;
+        var rSrc = obj1.rSrc;
+        $('.left .t').find('img').attr('src', './upload/' + tSrc);
+        $('.left li').eq(0).find('img').attr('src', './upload/' + lSrc);
+        $('.left li').eq(1).find('img').attr('src', './upload/' + rSrc);
+        // 关闭比较页面
+        $('.top .lipstick_diff').hide();
+        $('body').removeClass('hidden');
+        $('.top .lipstick_diff .down .right').find('span').css('border-color', 'transparent');
+    });
+
+
+
+    //关闭比较页面
+    $('.top .lipstick_diff .wrapper .up span,.top .lipstick_diff .cover').click(function () {
+        $('.top .lipstick_diff .down .right').find('span').css('border-color', 'transparent');
+        $('.top .lipstick_diff').hide();
+        $('body').removeClass('hidden');
+
+    });
+
+
+
+
 })();
 
 

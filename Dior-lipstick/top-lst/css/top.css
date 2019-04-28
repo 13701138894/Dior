@@ -1,10 +1,14 @@
 .display {
   display: none;
 }
-.top {
-  width: 1349px;
+body {
+  height: 5000px;
 }
-.top .upper {
+div.top {
+  width: 1328px;
+  margin: 0 auto;
+}
+div.top .upper {
   position: relative;
   width: 100%;
   height: 79px;
@@ -12,7 +16,7 @@
   line-height: 79px;
   border-bottom: 1px solid #ccc;
 }
-.top .upper .ml {
+div.top .upper .ml {
   width: 98px;
   height: 38px;
   border: 1px solid #ccc;
@@ -25,7 +29,7 @@
   margin-top: 18px;
   margin-right: 23px;
 }
-.top .upper input {
+div.top .upper input {
   width: 299px;
   height: 40px;
   border-radius: 20px;
@@ -35,79 +39,88 @@
   margin-top: 18px;
   font-size: 14px;
 }
-.top .upper span.search {
+div.top .upper span.search {
   font-size: 28px;
   position: absolute;
   top: 0;
   left: 400px;
   transform: rotate(-10deg);
 }
-.top .upper .dior {
+div.top .upper .dior {
   margin-left: 150px;
 }
-.top .upper .dior a {
+div.top .upper .dior a {
   display: inline-block;
 }
-.top .upper .dior a img {
+div.top .upper .dior a img {
   margin-top: -7px;
 }
-.top .upper .r span {
+div.top .upper .r span {
   font-size: 22px;
   margin-right: 26px;
 }
-.top .upper .r span:nth-child(2) {
+div.top .upper .r span:nth-child(2) {
   font-size: 27px;
 }
-.top .content {
-  width: 1349px;
+div.top .content {
+  width: 100%;
   margin: 0 auto;
   margin-top: 45px;
-  padding-left: 20px;
   box-sizing: border-box;
+  display: flex;
 }
-.top .content .left .t {
+div.top .content .left {
+  width: 60%;
+}
+div.top .content .left .t {
   margin-bottom: 26px;
 }
-.top .content .left .t a {
+div.top .content .left .t a {
   display: inline-block;
 }
-.top .content .left .t a img {
-  width: 785px;
+div.top .content .left .t a img {
+  width: 100%;
 }
-.top .content .left ul {
-  width: 806px;
+div.top .content .left ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.top .content .left ul li {
-  float: left;
-  margin-right: 21px;
+div.top .content .left ul li {
+  width: 49%;
   margin-bottom: 27px;
 }
-.top .content .left ul li img {
-  width: 382px;
+div.top .content .left ul li img {
+  width: 100%;
 }
-.top .content .right {
-  width: 448px;
-  margin-left: 52px;
+div.top .content .right {
+  width: 451.52px;
+  margin-left: 79.68px;
 }
-.top .content .right .tittle {
+div.top .content .right .tittle {
   padding-bottom: 20px;
   font-size: 31px;
   line-height: 35px;
   border-bottom: 1px solid #ccc;
 }
-.top .content .right .tittle span {
-  font-size: 16px;
+div.top .content .right .tittle p {
+  letter-spacing: 2px;
 }
-.top .content .right .color {
+div.top .content .right .tittle span {
+  font-size: 16px;
+  word-spacing: 5px;
+}
+div.top .content .right .color {
   height: 279px;
   border-bottom: 1px solid #ccc;
   text-align: center;
   padding-top: 27px;
 }
-.top .content .right .color ul {
+div.top .content .right .color ul {
   padding-left: 10px;
 }
-.top .content .right .color .diff {
+div.top .content .right .color .diff {
   display: inline-block;
   margin-top: 36px;
   width: 193px;
@@ -117,17 +130,17 @@
   border: 1px solid #000;
   text-align: center;
 }
-.top .content .right .color .diff:hover {
+div.top .content .right .color .diff:hover {
   font-weight: 700;
 }
-.top .content .right .price {
+div.top .content .right .price {
   border-bottom: 1px solid #ccc;
   display: block;
   height: 83px;
   line-height: 83px;
   font-size: 14px;
 }
-.top .content .right .price img {
+div.top .content .right .price img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -135,18 +148,18 @@
   margin-left: 10px;
   margin-right: 11px;
 }
-.top .content .right .price .ms {
+div.top .content .right .price .ms {
   margin-top: 26px;
   line-height: 16px;
 }
-.top .content .right .price .jt {
+div.top .content .right .price .jt {
   margin-right: 15px;
   color: transparent;
 }
-.top .content .right .price .jage {
+div.top .content .right .price .jage {
   margin-right: 27px;
 }
-.top .content .right .price ul {
+div.top .content .right .price ul {
   height: 476px;
   width: 448px;
   background-color: #fff;
@@ -155,55 +168,55 @@
   position: absolute;
   z-index: 50;
 }
-.top .content .right .price ul li {
+div.top .content .right .price ul li {
   height: 67px;
   line-height: 67px;
   background: #fff;
 }
-.top .content .right .price ul li a {
+div.top .content .right .price ul li a {
   display: block;
   border-bottom: 1px solid #ccc;
 }
-.top .content .right .price ul li a img {
+div.top .content .right .price ul li a img {
   margin-top: 19px;
 }
-.top .content .right .price ul li a .ms {
+div.top .content .right .price ul li a .ms {
   margin-top: 19px;
 }
-.top .content .right .price ul li a .jt {
+div.top .content .right .price ul li a .jt {
   font-size: 24px;
   font-weight: 700;
 }
-.top .content .right .price ul li:hover {
+div.top .content .right .price ul li:hover {
   font-weight: 700;
   background-color: #f6f6f6;
 }
-.top .content .right .dz {
+div.top .content .right .dz {
   line-height: 80px;
   margin-bottom: 22px;
 }
-.top .content .right .dz a {
+div.top .content .right .dz a {
   display: inline-block;
   position: relative;
   z-index: 0;
 }
-.top .content .right .dz a span {
+div.top .content .right .dz a span {
   font-size: 20px;
 }
-.top .content .right .dz a i {
+div.top .content .right .dz a i {
   text-decoration: underline;
   display: inline-block;
   margin-left: 10px;
   width: 100px;
 }
-.top .content .right .dz a span.nr {
+div.top .content .right .dz a span.nr {
   font-size: 14px;
   position: absolute;
   width: 100px;
   top: 12px;
   left: 36px;
 }
-.top .content .right .dz a .nrr {
+div.top .content .right .dz a .nrr {
   padding-top: -5px;
   position: absolute;
   z-index: 0;
@@ -212,28 +225,28 @@
   top: -4px;
   left: 23px;
 }
-.top .content .right .dz em {
+div.top .content .right .dz em {
   margin-right: 16px;
 }
-.top .content .right .dz a.fr span {
+div.top .content .right .dz a.fr span {
   color: #ccc;
 }
-.top .content .right .btn .dg {
+div.top .content .right .btn .dg {
   display: inline-block;
-  width: 374px;
+  width: 80%;
   line-height: 60px;
   border-radius: 30px;
   background-color: #000;
   font-size: 16px;
   text-align: center;
 }
-.top .content .right .btn .dg a {
+div.top .content .right .btn .dg a {
   color: #ffffff;
 }
-.top .content .right .btn .dg a:hover {
+div.top .content .right .btn .dg a:hover {
   font-weight: 700;
 }
-.top .content .right .btn a {
+div.top .content .right .btn a {
   display: inline-block;
   width: 58px;
   height: 58px;
@@ -242,10 +255,10 @@
   text-align: center;
   line-height: 58px;
 }
-.top .content .right .btn a i {
+div.top .content .right .btn a i {
   font-size: 22px;
 }
-.top .content .right .btn a.xz {
+div.top .content .right .btn a.xz {
   display: block;
   line-height: 58px;
   width: 100%;
@@ -257,30 +270,31 @@
   font-size: 16px;
   color: #000;
 }
-.top .content .right .btn a.xz:hover {
+div.top .content .right .btn a.xz:hover {
   font-weight: 700;
 }
-.top .content .right .btn .th {
+div.top .content .right .btn .th {
   text-align: center;
 }
-.top .content .right .btn .th a {
+div.top .content .right .btn .th a {
   width: 100%;
   border: none;
   font-size: 14px;
   text-decoration: underline;
 }
-.top .content .right .btn .th a:hover {
+div.top .content .right .btn .th a:hover {
   font-weight: 700;
 }
-.top .kz {
+div.top .kz {
   width: 100%;
-  height: 5000px;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
 }
-.top .kz .wrapper {
+div.top .kz .wrapper {
   width: 530px;
   height: 571px;
   margin: 32px auto;
@@ -292,22 +306,22 @@
   overflow: auto;
   position: relative;
 }
-.top .kz .wrapper h3 {
+div.top .kz .wrapper h3 {
   font-size: 26px;
   padding-top: 43px;
   height: 38px;
   font-weight: 400;
 }
-.top .kz .wrapper p {
+div.top .kz .wrapper p {
   line-height: 24px;
 }
-.top .kz .wrapper i {
+div.top .kz .wrapper i {
   font-weight: 700;
 }
-.top .kz .wrapper img {
+div.top .kz .wrapper img {
   width: 450px;
 }
-.top .kz .wrapper input {
+div.top .kz .wrapper input {
   width: 333px;
   line-height: 47px;
   border: 1px solid #ccc;
@@ -315,17 +329,17 @@
   padding-left: 21px;
   box-sizing: border-box;
 }
-.top .kz .wrapper .count {
+div.top .kz .wrapper .count {
   display: block;
   line-height: 54px;
   text-align: right;
   margin-right: 41px;
 }
-.top .kz .wrapper a {
+div.top .kz .wrapper a {
   display: block;
   text-align: center;
 }
-.top .kz .wrapper a .cancel {
+div.top .kz .wrapper a .cancel {
   width: 234px;
   line-height: 46px;
   margin-left: 80px;
@@ -334,10 +348,10 @@
   border-radius: 23px;
   color: #000;
 }
-.top .kz .wrapper a:hover {
+div.top .kz .wrapper a:hover {
   font-weight: 700;
 }
-.top .kz .wrapper .ok {
+div.top .kz .wrapper .ok {
   background-color: #000;
   color: #fff;
   width: 234px;
@@ -347,26 +361,27 @@
   border: 1px solid #000;
   border-radius: 23px;
 }
-.top .kz .wrapper em {
+div.top .kz .wrapper em {
   line-height: 24px;
   color: #bbbbbb;
   margin-bottom: 46px;
   display: inline-block;
 }
-.top .kz .wrapper .close {
+div.top .kz .wrapper .close {
   position: absolute;
   top: 46px;
   right: 46px;
   font-size: 28px;
 }
-.top .tuihuan {
+div.top .tuihuan {
   width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.top .tuihuan .wrapper {
+div.top .tuihuan .wrapper {
   position: relative;
   width: 680px;
   height: 571px;
@@ -375,155 +390,153 @@
   overflow: auto;
   padding: 0 41px;
 }
-.top .tuihuan .wrapper h3 {
+div.top .tuihuan .wrapper h3 {
   text-align: center;
   font-size: 24px;
   line-height: 115px;
 }
-.top .tuihuan .wrapper p {
+div.top .tuihuan .wrapper p {
   height: 33px;
   font-size: 15px;
   line-height: 25px;
   margin-bottom: 20px;
   color: #000000;
 }
-.top .tuihuan .wrapper .close {
+div.top .tuihuan .wrapper .close {
   position: absolute;
   top: 36px;
   right: 40px;
   font-size: 31px;
   cursor: pointer;
 }
-.top .scroll {
+div.top .scroll {
   position: fixed !important;
-  right: 23px;
+  z-index: 10;
 }
-.top .sc {
+div.top .sc {
   float: left;
-  margin-right: 12px;
+  margin-right: 1.7%;
   margin-bottom: 12px;
 }
-.top .sc span {
+div.top .sc span {
   display: block;
   width: 40px;
   height: 40px;
   border: 1px solid transparent;
   border-radius: 50%;
 }
-.top .sc span a {
+div.top .sc span a {
   display: block;
 }
-.top .sc span a img {
+div.top .sc span a img {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   margin-top: 2px;
 }
-.top .car {
+div.top .car {
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
+  left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 10000;
 }
-.top .car .playCar {
-  width: 550px;
+div.top .car .playCar {
+  width: 544.48px;
   height: 100%;
   background: #fff;
   position: absolute;
-  right: 0;
   top: 0;
 }
-.top .car .playCar .close {
+div.top .car .playCar .close {
   line-height: 79px;
   font-size: 24px;
-  text-align: right;
-  margin-right: 28px;
-  margin-left: 480px;
+  margin-left: 87%;
   cursor: pointer;
 }
-.top .car .playCar ul.up {
+div.top .car .playCar ul.up {
   width: 100%;
   line-height: 45px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-.top .car .playCar ul.up li {
-  width: 90px;
+div.top .car .playCar ul.up li {
+  width: 20%;
   text-align: center;
-  margin: 0 44px;
+  margin: 0 6%;
 }
-.top .car .playCar div.down {
+div.top .car .playCar div.down {
   overflow: auto;
 }
-.top .car .playCar div.down ul.d1 li {
+div.top .car .playCar div.down ul.d1 li {
   margin-top: 50px;
   margin-bottom: 60px;
   margin-left: 10px;
   overflow: hidden;
 }
-.top .car .playCar div.down ul.d1 li img {
-  width: 190px;
+div.top .car .playCar div.down ul.d1 li img {
+  width: 35%;
   cursor: pointer;
 }
-.top .car .playCar div.down ul.d1 li div.m {
+div.top .car .playCar div.down ul.d1 li div.m {
   color: #000;
   width: 184px;
   margin-top: 34px;
-  margin-left: 35px;
+  margin-left: 6.7%;
   line-height: 20px;
   font-size: 15px;
 }
-.top .car .playCar div.down ul.d1 li div.m i.p2 {
+div.top .car .playCar div.down ul.d1 li div.m i.p2 {
   display: block;
 }
-.top .car .playCar div.down ul.d1 li div.m span {
+div.top .car .playCar div.down ul.d1 li div.m span {
   display: block;
   line-height: 42px;
 }
-.top .car .playCar div.down ul.d1 li div.m a.del {
+div.top .car .playCar div.down ul.d1 li div.m a.del {
   text-decoration: underline;
   color: #000;
 }
-.top .car .playCar div.down ul.d1 li .bag {
+div.top .car .playCar div.down ul.d1 li .bag {
   width: 49px;
   line-height: 49px;
   margin-top: 79px;
-  margin-right: 60px;
+  margin-right: 8%;
   border-radius: 50%;
   background: #000;
   text-align: center;
   color: #fff;
   cursor: pointer;
 }
-.top .car .playCar div.down .empty1 {
+div.top .car .playCar div.down .empty1 {
   padding-top: 54px;
   text-align: center;
   color: #000;
 }
-.top .car .playCar div.down ul.d2 {
+div.top .car .playCar div.down ul.d2 {
   background-color: #f6f6f6;
 }
-.top .car .playCar div.down ul.d2 a {
+div.top .car .playCar div.down ul.d2 a {
   display: block;
 }
-.top .car .playCar div.down ul.d2 h2 {
+div.top .car .playCar div.down ul.d2 h2 {
   padding-top: 54px;
   font-size: 25px;
   font-weight: 400;
   text-align: center;
 }
-.top .car .playCar div.down ul.d2 li:nth-child(1) {
+div.top .car .playCar div.down ul.d2 li:nth-child(1) {
   text-align: center;
   background-color: #fff;
   padding-bottom: 50px;
 }
-.top .car .playCar div.down ul.d2 li:nth-child(1) p {
+div.top .car .playCar div.down ul.d2 li:nth-child(1) p {
   line-height: 53px;
 }
-.top .car .playCar div.down ul.d2 li:nth-child(1) a.login {
-  margin-left: 221px;
+div.top .car .playCar div.down ul.d2 li:nth-child(1) a.login {
+  margin-left: 42%;
   width: 100px;
   line-height: 48px;
   border-radius: 24px;
@@ -531,7 +544,7 @@
   color: #fff;
   text-align: center;
 }
-.top .car .playCar div.down ul.d2 li:nth-child(2) a.register {
+div.top .car .playCar div.down ul.d2 li:nth-child(2) a.register {
   width: 130px;
   margin-left: 209px;
   margin-top: 25px;
@@ -540,57 +553,60 @@
   border-radius: 23px;
   border: 1px solid #000;
 }
-.top .car .playCar div.down ul.d3 {
+div.top .car .playCar div.down ul.d3 {
   padding-top: 50px;
   color: #000000;
 }
-.top .car .playCar div.down ul.d3 a {
+div.top .car .playCar div.down ul.d3 a {
   display: inline-block;
 }
-.top .car .playCar div.down ul.d3 li {
+div.top .car .playCar div.down ul.d3 li {
   position: relative;
   margin-bottom: 30px;
 }
-.top .car .playCar div.down ul.d3 li img {
-  width: 190px;
+div.top .car .playCar div.down ul.d3 li a.fl {
+  width: 36%;
 }
-.top .car .playCar div.down ul.d3 li div.basket {
-  width: 285px;
-  margin-left: 33px;
+div.top .car .playCar div.down ul.d3 li a.fl img {
+  width: 100%;
 }
-.top .car .playCar div.down ul.d3 li div.basket p {
-  width: 241px;
+div.top .car .playCar div.down ul.d3 li div.basket {
+  width: 54%;
+  margin-left: 6.2%;
+}
+div.top .car .playCar div.down ul.d3 li div.basket p {
+  width: 84.5%;
   margin-top: 17px;
   line-height: 22px;
   font-size: 15px;
 }
-.top .car .playCar div.down ul.d3 li div.basket p a {
+div.top .car .playCar div.down ul.d3 li div.basket p a {
   color: #000000;
 }
-.top .car .playCar div.down ul.d3 li div.basket span {
+div.top .car .playCar div.down ul.d3 li div.basket span {
   display: block;
-  width: 184px;
+  width: 64.5%;
   line-height: 22px;
   font-size: 15px;
 }
-.top .car .playCar div.down ul.d3 li div.basket .left i {
+div.top .car .playCar div.down ul.d3 li div.basket .left i {
   line-height: 50px;
   font-weight: 700;
   font-size: 12px;
 }
-.top .car .playCar div.down ul.d3 li div.basket .left a.del {
+div.top .car .playCar div.down ul.d3 li div.basket .left a.del {
   display: block;
   font-size: 16px;
   color: #000;
   text-decoration: underline;
 }
-.top .car .playCar div.down ul.d3 li div.basket .right i {
+div.top .car .playCar div.down ul.d3 li div.basket .right i {
   line-height: 50px;
   display: block;
   text-align: right;
   margin-right: 12px;
 }
-.top .car .playCar div.down ul.d3 li div.basket .right button {
+div.top .car .playCar div.down ul.d3 li div.basket .right button {
   width: 30px;
   height: 30px;
   border: 1px solid #090909;
@@ -603,26 +619,26 @@
   outline: 0;
   cursor: pointer;
 }
-.top .car .playCar div.down ul.d3 li div.basket .right button.reduce {
+div.top .car .playCar div.down ul.d3 li div.basket .right button.reduce {
   font-size: 18px;
   cursor: default;
 }
-.top .car .playCar div.down ul.d3 li span.love {
+div.top .car .playCar div.down ul.d3 li span.love {
   position: absolute;
   top: 13px;
   left: 160px;
   font-size: 22px;
   cursor: pointer;
 }
-.top .car .playCar div.down ul.d3 li:last-child {
+div.top .car .playCar div.down ul.d3 li:last-child {
   height: 201px;
   text-align: center;
 }
-.top .car .playCar div.down ul.d3 li:last-child .price {
+div.top .car .playCar div.down ul.d3 li:last-child .price {
   line-height: 69px;
   background-color: #f6f6f6;
 }
-.top .car .playCar div.down ul.d3 li:last-child button {
+div.top .car .playCar div.down ul.d3 li:last-child button {
   margin-top: 25px;
   width: 100px;
   line-height: 48px;
@@ -633,19 +649,19 @@
   border: none;
   cursor: pointer;
 }
-.top .car .playCar div.down ul.d3 li:last-child button:hover {
+div.top .car .playCar div.down ul.d3 li:last-child button:hover {
   font-weight: 700;
 }
-.top .car .playCar div.down .empty3 {
+div.top .car .playCar div.down .empty3 {
   text-align: center;
 }
-.top .car .playCar div.down .empty3 p {
+div.top .car .playCar div.down .empty3 p {
   padding-top: 56px;
   padding-bottom: 20px;
   font-size: 15px;
   color: #000000;
 }
-.top .car .playCar div.down .empty3 button {
+div.top .car .playCar div.down .empty3 button {
   width: 130px;
   height: 46px;
   outline: none;
@@ -654,13 +670,135 @@
   border-radius: 23px;
   cursor: pointer;
 }
-.top .car .playCar div.down .empty3 button:hover {
+div.top .car .playCar div.down .empty3 button:hover {
   font-weight: 700;
+}
+div.top .lipstick_diff {
+  width: 100%;
+  height: 100%;
+}
+div.top .lipstick_diff .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+div.top .lipstick_diff .wrapper {
+  position: absolute;
+  top: 32px;
+  width: 900px;
+  height: 571px;
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 101;
+  left: 50%;
+  transform: translate(-50%);
+}
+div.top .lipstick_diff .wrapper .up {
+  text-align: center;
+}
+div.top .lipstick_diff .wrapper .up h3 {
+  padding-top: 43px;
+  font-size: 27px;
+  font-weight: 400;
+  color: #000;
+}
+div.top .lipstick_diff .wrapper .up p {
+  font-size: 14px;
+  color: #000;
+  line-height: 66px;
+}
+div.top .lipstick_diff .wrapper .up span {
+  position: absolute;
+  top: 40px;
+  right: 4.6%;
+  font-size: 22px;
+  cursor: pointer;
+}
+div.top .lipstick_diff .wrapper .down {
+  display: flex;
+}
+div.top .lipstick_diff .wrapper .down ul {
+  padding-top: 26px;
+  margin-left: 7%;
+  padding-left: 3%;
+  margin-right: 10%;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+}
+div.top .lipstick_diff .wrapper .down ul li {
+  margin-right: 12px;
+}
+div.top .lipstick_diff .wrapper .down ul li img {
+  margin-left: 2px;
+}
+div.top .lipstick_diff .wrapper .down .left {
+  flex: 1;
+}
+div.top .lipstick_diff .wrapper .down .diff {
+  position: relative;
+  margin-top: 50px;
+  width: 190px;
+  height: 175px;
+}
+div.top .lipstick_diff .wrapper .down .diff img {
+  height: 100%;
+}
+div.top .lipstick_diff .wrapper .down .diff .drag {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #fff;
+}
+div.top .lipstick_diff .wrapper .down .diff span {
+  display: inline-block;
+  font-size: 30px;
+  position: absolute;
+  top: 174px;
+  left: 50%;
+  color: #000;
+  transform: translate(-50%);
+}
+div.top .lipstick_diff .wrapper .down .right {
+  flex: 1;
+}
+div.top .lipstick_diff .wrapper .down .diff_ms img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 11%;
+  margin-top: 22px;
+}
+div.top .lipstick_diff .wrapper .down .diff_ms div {
+  padding-top: 24px;
+  margin-left: 5%;
+}
+div.top .lipstick_diff .wrapper .down .diff_ms div p {
+  height: 17px;
+}
+div.top .lipstick_diff .wrapper .down a.xz_btn {
+  display: inline-block;
+  width: 76%;
+  line-height: 46px;
+  border-radius: 23px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  margin-left: 12%;
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 .toTop {
   position: fixed;
   bottom: 5px;
-  right: 12px;
   font-size: 20px;
   font-weight: 200;
   background-color: #fff;
@@ -670,6 +808,7 @@
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
+  z-index: 10000;
 }
 .ccc {
   border-color: #cecece !important;
