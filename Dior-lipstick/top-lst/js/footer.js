@@ -85,30 +85,36 @@
     var progressCurrent = document.querySelector('.footer .controller .progress-current');
     var time = document.querySelector('.footer .controller-bar div:nth-child(2)');
     
+    var duration;
     video.addEventListener('loadedmetadata', function () {
-        progress.setAttribute('max', video.duration);
+        duration = video.duration;
     });
     video.addEventListener('timeupdate', function () {
-        if (!progress.getAttribute('max')) {
-            progress.setAttribute('max', video.duration);
+        if (!duration) {
+            duration = video.duration;
         }
         progress.value = video.currentTime;
         
-        progressCurrent.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
+        progressCurrent.style.width = Math.floor((video.currentTime / duration) * 100) + '%';
 
         var currentTime = Math.ceil(video.currentTime) < 10 ? '0' + Math.ceil(video.currentTime) : Math.ceil(video.currentTime);
-        time.innerText = '00:' + currentTime + '/00:' + Math.ceil(video.duration);
+        time.innerText = '00:' + currentTime + '/00:' + Math.ceil(duration);
 
         // 判断视频是否播放完成
-        if (video.currentTime == video.duration) {
+        if (video.currentTime == duration) {
             reload.style.display = 'block';
         }
     });
     // 点击进度条
     progress.addEventListener('click', function (e) {
         e.stopPropagation();
+        if (video.paused || video.ended) {
+            reload.style.display = 'none';
+            playPause.style.display = 'block';
+        }
+        
         var pos = e.offsetX / this.offsetWidth;
-        video.currentTime = pos * video.duration;
+        video.currentTime = pos * duration;
     });
 
     // 点击重新加载
@@ -151,10 +157,8 @@
             innerScroll.style.width = that.offsetWidth * pos + 'px';
             video.volume = pos;
         }
-        // var currentVolume = Math.floor(video.volume * 10) / 10;
-        
     }
-    document.onmouseup = function(e) {
+    document.onmouseup = function() {
         document.onmousemove = null;
     }
 }();

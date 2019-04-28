@@ -1,6 +1,11 @@
 svg {
   fill: white;
 }
+.footer {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
 .footer .video-content {
   width: 80%;
   text-align: center;
@@ -21,6 +26,7 @@ svg {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 70px;
+  cursor: pointer;
 }
 .footer .video-content .video-img .controller {
   position: absolute;
