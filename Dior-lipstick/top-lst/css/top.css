@@ -7,6 +7,7 @@ body {
 div.top {
   width: 1328px;
   margin: 0 auto;
+  position: relative;
 }
 div.top .upper {
   position: relative;
@@ -284,6 +285,55 @@ div.top .content .right .btn .th a {
 }
 div.top .content .right .btn .th a:hover {
   font-weight: 700;
+}
+div.top .ml_develop .cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+div.top .ml_develop ul {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28.8%;
+  height: 100%;
+  background-color: #fff;
+}
+div.top .ml_develop ul li {
+  line-height: 79px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  cursor: pointer;
+}
+div.top .ml_develop ul li:nth-child(1) {
+  padding-left: 27px;
+  text-align: left;
+  margin-left: 0;
+}
+div.top .ml_develop ul li:nth-child(1) img {
+  height: 25px;
+  cursor: pointer;
+}
+div.top .ml_develop ul li:nth-child(2),
+div.top .ml_develop ul li:nth-child(3) {
+  background: url(../image/xiaoyuhao.png) 44px 31px no-repeat;
+  background-size: 11px 14px;
+}
+div.top .ml_develop ul li:nth-child(2):hover,
+div.top .ml_develop ul li:nth-child(3):hover {
+  font-weight: 700;
+}
+div.top .ml_develop ul p {
+  line-height: 57px;
+}
+div.top .ml_develop ul p:hover {
+  font-weight: 700;
+}
+div.top .ml_develop ul li:nth-child(4) {
+  border-bottom: 0;
 }
 div.top .kz {
   width: 100%;
@@ -687,6 +737,15 @@ div.top .lipstick_diff .cover {
   left: 0;
   z-index: 100;
 }
+div.top .lipstick_diff .diff_cover {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
 div.top .lipstick_diff .wrapper {
   position: absolute;
   top: 32px;
@@ -719,6 +778,7 @@ div.top .lipstick_diff .wrapper .up span {
   right: 4.6%;
   font-size: 22px;
   cursor: pointer;
+  z-index: 100;
 }
 div.top .lipstick_diff .wrapper .down {
   display: flex;
@@ -744,10 +804,10 @@ div.top .lipstick_diff .wrapper .down .diff {
   position: relative;
   margin-top: 50px;
   width: 190px;
-  height: 175px;
+  height: 300px;
 }
 div.top .lipstick_diff .wrapper .down .diff img {
-  height: 100%;
+  height: 190px;
 }
 div.top .lipstick_diff .wrapper .down .diff .drag {
   width: 50%;
@@ -757,15 +817,22 @@ div.top .lipstick_diff .wrapper .down .diff .drag {
   left: 0;
   top: 0;
   border-right: 1px solid #fff;
+  z-index: 10;
 }
-div.top .lipstick_diff .wrapper .down .diff span {
+div.top .lipstick_diff .wrapper .down .diff .drag img {
+  z-index: 10;
+  height: 190px;
+}
+div.top .lipstick_diff .wrapper .down .diff span.move {
   display: inline-block;
   font-size: 30px;
   position: absolute;
-  top: 174px;
+  top: 190px;
   left: 50%;
   color: #000;
   transform: translate(-50%);
+  cursor: pointer;
+  z-index: 9999999;
 }
 div.top .lipstick_diff .wrapper .down .right {
   flex: 1;
