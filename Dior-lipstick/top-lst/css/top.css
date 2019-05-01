@@ -63,6 +63,23 @@ div.top .upper .r span {
 div.top .upper .r span:nth-child(2) {
   font-size: 27px;
 }
+div.top .upper .r span:nth-child(3) {
+  position: relative;
+}
+div.top .upper .r span:nth-child(3) i {
+  display: block;
+  line-height: 15px;
+  position: absolute;
+  width: 15px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  left: 15px;
+  top: 0;
+  font-size: 12px;
+  cursor: pointer;
+}
 div.top .content {
   width: 100%;
   margin: 0 auto;
@@ -301,6 +318,7 @@ div.top .ml_develop ul {
   width: 28.8%;
   height: 100%;
   background-color: #fff;
+  overflow: auto;
 }
 div.top .ml_develop ul li {
   line-height: 79px;
@@ -334,6 +352,21 @@ div.top .ml_develop ul p:hover {
 }
 div.top .ml_develop ul li:nth-child(4) {
   border-bottom: 0;
+}
+div.top .ml_develop ul .cosmetics {
+  line-height: 54px;
+  border-bottom: none;
+}
+div.top .ml_develop ul .d3_show {
+  line-height: 54px;
+  text-align: center;
+}
+div.top .ml_develop ul .d3_show p:nth-child(2),
+div.top .ml_develop ul .d3_show p:nth-child(4),
+div.top .ml_develop ul .d3_show p:nth-child(9) {
+  border-bottom: 2px solid #e5e5e5;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 div.top .kz {
   width: 100%;

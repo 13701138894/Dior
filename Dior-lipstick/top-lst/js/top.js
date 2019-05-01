@@ -47,18 +47,38 @@
     ];
 
     //点击目录弹出目录下拉菜单
-    $('.upper .ml a').click(function(){
+    $('.upper .ml a').click(function () {
         $('body').addClass('hidden');
         $('.top .ml_develop').show();
     })
     //点击彩妆
-    $('.top .ml_develop').on('click','li.nth-child(2)',function(){
-        //隐藏mu_disappear，显示cosmetics
+    $('.top .ml_develop').on('click', 'li:nth-child(2)', function () {
+        $('.top .ml_develop ul .mu_disappear').hide().siblings('.cosmetics').show();
+        $('.top .ml_develop ul .d3_show').hide();
     })
+    //点击唇妆
+    $('.top .ml_develop').on('click', 'li:nth-child(3)', function () {
+        $('.top .ml_develop ul .d3').hide().siblings('.d3_show').show();
+    });
     //目录下拉菜单关闭功能
-    $('.top .ml_develop').on('click','img',function(){
+    $('.top .ml_develop').on('click', 'img', function () {
         $(this).parent().parent().parent().hide();
+        $('.top .ml_develop ul .mu_disappear').show().siblings('.cosmetics,.d3_show').hide();
         $('body').removeClass('hidden');
+    })
+    //upper购物篮数量显示及计算更新
+    upper_count();
+    $('.top').on('click', '.upper .r span:eq(2)', function () {
+        console.log(1)
+        var isOk = parseInt($('.upper .r span i').text());
+        console.log(isOk)
+        if (isOk > 0) {
+            $('.top .car').show();
+            //禁止屏幕生成滚动条
+            $('body').addClass('hidden');
+            $('.car .up li').eq(2).addClass('active').siblings().removeClass('active');
+            $('.car .down ul').eq(2).removeClass('display').siblings().addClass('display');
+        }
     })
 
     //生成color模块及点击事件
@@ -437,6 +457,8 @@
             }
         }
         draw_d3(scNrSy);
+        //upper购物篮数量显示及计算更新
+        upper_count();
     })
 
 
@@ -457,6 +479,8 @@
             //禁止屏幕生成滚动条
             $('body').addClass('hidden');
             draw_d3(sy);
+            //upper购物篮数量显示及计算更新
+            upper_count();
         }
 
 
@@ -483,6 +507,8 @@
             $('.car .down .d3').next().addClass('display');
         }
         d3_price();
+        //upper购物篮数量显示及计算更新
+        upper_count();
     })
 
     //购物车之购物篮部分点击+，数量加1
@@ -495,6 +521,8 @@
         // tab切换栏数量更新
         $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
         d3_price();
+        //upper购物篮数量显示及计算更新
+        upper_count();
     });
     //购物车之购物篮部分点击-，数量减1，并判断是否数量为1
     $('.car .down .d3').on('click', '.reduce', function () {
@@ -511,6 +539,8 @@
             $(this).siblings('i').find('em').text(cou);
             // tab切换栏数量更新
             $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
+            //upper购物篮数量显示及计算更新
+            upper_count();
         }
         d3_price();
 
@@ -604,6 +634,18 @@
         return all_price;
     }
 
+    //upper购物篮数量显示及计算
+    function upper_count() {
+        if (d3_count() <= 0) {
+            $('.top .upper .r span').eq(2).find('i').text(0).hide();
+
+        } else {
+            $('.top .upper .r span').eq(2).find('i').show().text(d3_count());
+        }
+    }
+
+
+
     //购物车导航栏切换事件
     $('.car .up').on('click', 'li', function () {
         $(this).addClass('active').siblings().removeClass('active');
@@ -620,9 +662,6 @@
 
 
     })
-
-
-
 
     //比较功能实现
     // 克隆两个color模块
