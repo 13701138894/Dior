@@ -1,9 +1,6 @@
 .display {
   display: none;
 }
-body {
-  height: 5000px;
-}
 div.top {
   width: 1328px;
   margin: 0 auto;
@@ -29,6 +26,7 @@ div.top .upper .ml {
   margin-left: 27px;
   margin-top: 18px;
   margin-right: 23px;
+  cursor: pointer;
 }
 div.top .upper input {
   width: 299px;

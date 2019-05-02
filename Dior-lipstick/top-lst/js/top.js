@@ -47,7 +47,7 @@
     ];
 
     //点击目录弹出目录下拉菜单
-    $('.upper .ml a').click(function () {
+    $('.upper .ml').click(function () {
         $('body').addClass('hidden');
         $('.top .ml_develop').show();
     })
@@ -69,9 +69,7 @@
     //upper购物篮数量显示及计算更新
     upper_count();
     $('.top').on('click', '.upper .r span:eq(2)', function () {
-        console.log(1)
         var isOk = parseInt($('.upper .r span i').text());
-        console.log(isOk)
         if (isOk > 0) {
             $('.top .car').show();
             //禁止屏幕生成滚动条
@@ -80,6 +78,8 @@
             $('.car .down ul').eq(2).removeClass('display').siblings().addClass('display');
         }
     })
+
+
 
     //生成color模块及点击事件
     for (var i = 0; i < pics.length; i++) {
@@ -93,6 +93,7 @@
         `
         $('<li class="sc"></li>').appendTo('.color ul').html(src)
     }
+    // var sy ;
     var sy = 10;
     $('.color li').on('click', function () {
         $(this).addClass('qq').siblings().removeClass('qq');
@@ -117,15 +118,15 @@
         $('.left li').eq(1).find('img').attr('src', './upload/' + rSrc);
     })
 
-
     // color模块默认点击状体
     colorInitialise();
     function colorInitialise() {
+
         $('.color li').eq(10).find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent');
         $('.color li').eq(10).addClass('qq').siblings().removeClass('qq');
         //改变en描述
-        $('up .ms .en').text(datas[10].num);
-        $('up .ms .cn').text(datas[10].color);
+        $('.price .up .ms .en').text(datas[10].num);
+        $('.price .up .ms .cn').text(datas[10].color);
         //up图片链接更改
         var src = pics[10].src;
         $('.up img').attr('src', './upload/' + src);
@@ -137,6 +138,7 @@
         $('.left li').eq(0).find('img').attr('src', './upload/' + lSrc);
         $('.left li').eq(1).find('img').attr('src', './upload/' + rSrc);
     };
+
 
 
     $('.color li').on('mouseenter', function () {
@@ -153,15 +155,41 @@
         $('.up img').attr('src', './upload/' + src);
     })
 
-    $('.color li').mouseleave(function () {
-        var obj1 = pics[sy];
-        var obj2 = datas[sy];
-        //圈圈特效
-        $('.color li').eq(sy).find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent');
-        //改变en描述
-        $('.up .ms .en').text(datas[sy].num);
+    // $('.color li').mouseleave(function () {
+    //     var obj1 = pics[sy];
+    //     var obj2 = datas[sy];
+    //     //圈圈特效
+    //     $('.color li.qq').find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent');
+    //     //改变en描述
+    //     $('.price a.up .ms .en').text(datas[sy].num);
 
-        $('.up .ms .cn').text(obj2.color);
+    //     $('.price a.up .ms .cn').text(obj2.color);
+    //     //up图片链接更改
+    //     var src = obj1.src;
+    //     $('.up img').attr('src', './upload/' + src);
+    //     //左侧图片链接改变
+    //     var tSrc = obj1.tSrc;
+    //     var lSrc = obj1.lSrc;
+    //     var rSrc = obj1.rSrc;
+    //     $('.left .t').find('img').attr('src', './upload/' + tSrc);
+    //     $('.left li').eq(0).find('img').attr('src', './upload/' + lSrc);
+    //     $('.left li').eq(1).find('img').attr('src', './upload/' + rSrc);
+    // });
+
+    $('.color li').mouseleave(function () {
+
+        //圈圈特效
+        $('.color li.qq').find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent');
+        var index = $('.color li.qq').index();
+        // console.log(index);
+        var obj1 = pics[index];
+        var obj2 = datas[index];
+        // console.log(obj1);
+        // console.log(obj2);
+        //改变en描述
+        $('.price a.up .ms .en').text(obj2.num);
+
+        $('.price a.up .ms .cn').text(obj2.color);
         //up图片链接更改
         var src = obj1.src;
         $('.up img').attr('src', './upload/' + src);
@@ -173,6 +201,13 @@
         $('.left li').eq(0).find('img').attr('src', './upload/' + lSrc);
         $('.left li').eq(1).find('img').attr('src', './upload/' + rSrc);
     });
+
+
+
+
+
+
+
 
 
     // 生成price中的下拉菜单ul及点击事件
@@ -332,17 +367,6 @@
         $('.kz').hide();
     })
 
-    //尝试失败
-    // function fn(){
-    //     $('.kz input').val('');
-    //     $('.kz .count').text('8');
-    //     $('body').removeClass('hidden');
-    //     $('.kz').hide();
-    // }
-    // $('.kz .close,.kz  .cancel,.kz ').on('click',fn)
-    // $('.kz .wrapper').off('click',fn);
-
-
 
     // 免费送货及退换
     $('.content .right .btn .th').on('click', function () {
@@ -364,75 +388,93 @@
             //控制playCar位置
             var playCarPosition = ($(window).width() - $('.top').width()) / 2;
             $('.top .car .playCar').css('right', playCarPosition);
-            // 显示我的收藏
-            $('.car .down .d1').removeClass('display').siblings().addClass('display');
+            // // 显示我的收藏
+            // $('.car .down .d1').removeClass('display').siblings().addClass('display');
             // 我的收藏之空替换隐藏
             $('.car .down .d1').next().addClass('display');
-
-
-
-            // 自动生成列表
-            var nr = `
-            <img src="./upload/${pics[sy].sSrc}" alt="" class="fl">
-            <div class="fl m">
-                <p>全新<strong>DIOR</strong>迪奥烈艳蓝金挚红唇膏</p>
-                <i class="p1">炽色 持妆 轻盈水润</i>
-                <i class="p2">${datas[sy].num}</i>
-                <span><strong>￥${datas[sy].price}</strong></span>
-                <a href="javascript:" class="del">删除</a>
-            </div>
-            <div class="bag fr">
-                <span class="iconfont">&#xe683;</span>
-            </div>
-            `
-            $('<li></li>').appendTo('.car .down .d1').addClass('clearfix').html(nr);
-            // 导航栏显示点击效果
-            $('.top .car .up li').eq(0).addClass('active').siblings().removeClass('active');
-            // 购物车收藏之删除功能
-            $('.top .car .d1 .del').click(function () {
-                $(this).parent().parent().remove();
-                // li的数量
-                var cou = $('.top .car .down .d1').find('li').length;
-                if (cou == 0) {
-                    $('.top .car .up li').eq(0).find('i').text('');
-                    // 我的收藏隐藏
-                    $('.car .down .d1').addClass('display');
-                    // 我的收藏之空替换显示
-                    $('.car .down .d1').next().removeClass('display');
-                } else {
-                    // 我的收藏显示
-                    $('.car .down .d1').removeClass('display');
-                    // 我的收藏之空替换隐藏
-                    $('.car .down .d1').next().addClass('display');
-                    $('.top .car .up li').eq(0).find('i').text('(' + cou + ')');
-                }
-            })
-
-
-
-
+            //我的收藏生成函数
+            sc(sy);
             //我的收藏之点击手提袋加入购物篮功能
             $('.car .d1 .bag')[0].addEventListener('click', function () {
                 var that = this;
 
             })
 
-
-
             //设置ul的高度
             var diffHeight = $(window).innerHeight() - $('.car .close').height() - $('.car .up').height();
             $('.top .car .down').height(diffHeight);
             $('.top .car .down .d2').height(diffHeight);
-            //设置切换栏中收藏数量
-            var cou = $('.top .car .down .d1').find('li').length;
-            if (cou == 0) {
-                $('.top .car .up li').eq(0).find('i').text('');
-            } else {
-                $('.top .car .up li').eq(0).find('i').text('(' + cou + ')');
-            }
-
         }
     });
+
+    // 购物车收藏之删除功能
+    $('.top .car').on('click', '.d1 .del', function () {
+        $(this).parent().parent().remove();
+        //检查我的购物篮中是否有带💗商品，有切换💗标记
+        var nr = parseInt($(this).siblings('.p2').text());
+        var nrs = $('.car .d3 .basket strong');
+        for (var i = 0; i < nrs.length; i++) {
+            if (nrs.eq(i).text() == nr) {
+                $('.car .d3 li').eq(i).find('.switch1').removeClass('display').next().addClass('display');
+                break;
+            }
+        }
+
+
+
+        // li的数量
+        var cou = $('.top .car .down .d1').find('li').length;
+        if (cou == 0) {
+            $('.top .car .up li').eq(0).find('i').text('');
+            // 我的收藏隐藏
+            $('.car .down .d1').addClass('display');
+            // 我的收藏之空替换显示
+            $('.car .down .d1').next().removeClass('display');
+        } else {
+            // 我的收藏显示
+            $('.car .down .d1').removeClass('display');
+            // 我的收藏之空替换隐藏
+            $('.car .down .d1').next().addClass('display');
+            $('.top .car .up li').eq(0).find('i').text('(' + cou + ')');
+        }
+    })
+
+    //我的收藏生成函数
+    function sc(id) {
+        // 自动生成列表
+        var nr = `
+        <img src="./upload/${pics[id].sSrc}" alt="" class="fl">
+        <div class="fl m">
+            <p>全新<strong>DIOR</strong>迪奥烈艳蓝金挚红唇膏</p>
+            <i class="p1">炽色 持妆 轻盈水润</i>
+            <i class="p2">${datas[id].num}</i>
+            <span><strong>￥${datas[id].price}</strong></span>
+            <a href="javascript:" class="del">删除</a>
+        </div>
+        <div class="bag fr">
+            <span class="iconfont">&#xe683;</span>
+        </div>
+        `
+        $('<li></li>').appendTo('.car .down .d1').addClass('clearfix').html(nr);
+        // 导航栏显示点击效果
+        $('.top .car .up li').eq(0).addClass('active').siblings().removeClass('active');
+        // 显示我的收藏
+        $('.car .down .d1').removeClass('display').siblings().addClass('display');
+        //设置切换栏中收藏数量
+        sc_count();
+    }
+
+    //设置切换栏中收藏数量函数
+    function sc_count() {
+        var cou = $('.top .car .down .d1').find('li').length;
+        if (cou == 0) {
+            $('.top .car .up li').eq(0).find('i').text('');
+        } else {
+            $('.top .car .up li').eq(0).find('i').text('(' + cou + ')');
+        }
+    }
+
+
     // 我的收藏是否为空判断函数
     function scIsEmpty() {
         var cou = $('.top .car .down .d1').find('li').length;
@@ -570,14 +612,47 @@
         $('.car .down .d3').next().addClass('display');
         // 导航栏显示点击效果
         $('.top .car .up li').eq(2).addClass('active').siblings().removeClass('active');
-        // 生成购物篮内容
-        var nr = `
+        //判断购物篮是否存在该商品，如已存在，数量加一
+        //获取购物篮目录
+        var strong = $('.car .down .d3 .basket strong');
+        var nrnr = parseInt(datas[parameter].num);
+        // console.log(nrnr)
+        var isHas = false;
+        for (var i = 0; i < strong.length; i++) {
+            if (parseInt(strong.eq(i).text()) == nrnr) {
+                // 存在
+                var isHas = true;
+                var index_has=i;
+                break;
+            }
+        }
+        if (isHas) {
+            // alert('已经存在,数量加一，价格加一，总数加一')
+            var cou = parseInt($('.car .down .d3  .right').find('em').text());
+            cou++;
+            alert(cou)
+            $('.car .down .d3  .right').find('em').text(cou);
+            // -按钮取消禁止
+            $('.car .down .d3 .add').prev().removeClass('ccc').css('cursor', 'pointer');
+            // tab切换栏数量更新
+            $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
+            d3_price();
+            //upper购物篮数量显示及计算更新
+            upper_count();
+        } else {
+            // 生成购物篮内容
+            if (parseInt(datas[parameter].num) == 0) {
+                var num_0 = '000';
+            } else {
+                num_0 = parseInt(datas[parameter].num);
+            }
+            var nr = `
                     <a href="javascript:" class="fl">
                         <img src="./upload/${pics[parameter].cSrc}" alt="">
                     </a>
                     <div class="fl basket">
                         <p>
-                            <a href="javascript:">克丽丝汀迪奥烈艳蓝金挚红唇膏  <strong>${parseInt(datas[parameter].num)}</strong></a>
+                            <a href="javascript:">克丽丝汀迪奥烈艳蓝金挚红唇膏  <strong>${num_0}</strong></a>
                         </p>
                         <span>色泽饱满浓郁，质地轻盈舒悦</span>
                         <div class="fl left">
@@ -590,21 +665,21 @@
                             <button class="add iconfont">&#xe66e;</button>
                         </div>
                     </div>
-                    <span class="iconfont love">&#xe82a;</span>
-                    <span class="iconfont display love">&#xe608;</span>
+                    <span class="iconfont love switch1">&#xe82a;</span>
+                    <span class="iconfont display love switch2">&#xe608;</span>
                 `;
 
 
-        var newLi = $('<li class="clearfix"></li>').html(nr);
-        $('.car .down .d3 .last').before(newLi);
-        d3_price();
-        // tab切换栏数量更新
-        $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
-        // 设置ul高度
-        var diffHeight = $(window).innerHeight() - $('.car .close').height() - $('.car .up').height();
-        $('.top .car .down').height(diffHeight);
-        $('.top .car .down .d3').height(diffHeight);
-
+            var newLi = $('<li class="clearfix"></li>').html(nr);
+            $('.car .down .d3 .last').before(newLi);
+            d3_price();
+            // tab切换栏数量更新
+            $('.top .car .up li').eq(2).find('a').text('购物篮(' + d3_count() + ')');
+            // 设置ul高度
+            var diffHeight = $(window).innerHeight() - $('.car .close').height() - $('.car .up').height();
+            $('.top .car .down').height(diffHeight);
+            $('.top .car .down .d3').height(diffHeight);
+        }
 
     }
 
@@ -633,6 +708,41 @@
         $('.car .down .d3 .last').find('em').text(all_price);
         return all_price;
     }
+
+    //点击购物篮中的💗加入我的收藏
+    $('.car').on('click', '.down .d3 span.switch1', function () {
+        $(this).toggleClass('display').siblings('.switch2').toggleClass('display')
+        //添加到收藏
+        var num = parseInt($(this).siblings('div').find('strong').text())
+        for (i = 0; i < datas.length; i++) {
+            var nr = datas[i].num;
+            if (nr.indexOf(num) != -1) {
+                sc(i);
+                break;
+            }
+        }
+    })
+    //点击购物篮中的💗删除对应的收藏
+    $('.car').on('click', '.down .d3 span.switch2', function () {
+        $(this).toggleClass('display').siblings('.switch1').toggleClass('display')
+        var nrs = $('.car .down .d1 i.p2');
+        //添加到收藏
+        var num = parseInt($(this).siblings('div').find('strong').text())
+        for (i = 0; i < datas.length; i++) {
+            var nr = datas[i].num;
+            if (nr.indexOf(num) != -1) {
+                var nr = datas[i].num;
+                break;
+            }
+        }
+        for (var n = 0; n < nrs.length; n++) {
+            if (nr == nrs.eq(n).text()) {
+                $('.car .down .d1 li').eq(n).remove();
+                sc_count();
+                break;
+            }
+        }
+    })
 
     //upper购物篮数量显示及计算
     function upper_count() {
@@ -677,6 +787,7 @@
 
     // 点击比较按钮弹出比较页面
     var key = $('.top .color .diff').on('click', function () {
+
         // 显示比较功能模块
         $('.top .lipstick_diff').show();
         $('body').addClass('hidden');
@@ -685,8 +796,10 @@
         var sSrc = pics[initialKey].src;
         $('.top .lipstick_diff .down .left .diff_ms img').attr('src', './upload/' + sSrc);
         //添加圈圈特效
-        $('.top .lipstick_diff .down .left li').eq(initialKey).find('span').css('border-color', '#000')
+        $('.top .lipstick_diff .down .left li').eq(initialKey).find('span').css('border-color', '#000').addClass('dj')
             .end().siblings().find('span').css('border-color', 'transparent')
+
+        $('.top .lipstick_diff .down .left li').eq(initialKey).addClass('dj')
         //更改下部颜色描述
         var num = datas[initialKey].num;
         var color = datas[initialKey].color;
@@ -743,13 +856,15 @@
     })
 
     //点击‘选择按钮’事件
-    $('.top .lipstick_diff .down a.xz_btn').on('click', function () {
-        var index = $(this).siblings('ul').find('.dj').index();
-        console.log(index)
+    $('.top .lipstick_diff .down  a.xz_btn').on('click', function () {
+        var index = $(this).prev().prev().find('li.dj').index();
+        alert(index);
+        // return;
         var obj1 = pics[index];
         var obj2 = datas[index];
         //圈圈特效
         $('.color li').eq(index).find('span').css('border-color', '#000').end().siblings().find('span').css('border-color', 'transparent');
+        $('.color li').eq(index).addClass('qq').siblings().removeClass('qq');
         //改变en描述
         $('.up .ms .en').text(obj2.num);
 
@@ -768,6 +883,8 @@
         $('.top .lipstick_diff').hide();
         $('body').removeClass('hidden');
         $('.top .lipstick_diff .down .right').find('span').css('border-color', 'transparent');
+        //去除以前的dj属性
+        $('.top .lipstick_diff .down .left li').removeClass('dj');
     });
 
     //拖拽按钮进行对比
@@ -814,8 +931,6 @@
         $(document).off('mousemove', diff_move);
         $('.top .lipstick_diff .diff_cover').hide();
     });
-
-
 
 
     //关闭比较页面
