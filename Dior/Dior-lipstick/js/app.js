@@ -308,6 +308,8 @@
             // 触发定位
             $('.content .right').addClass('scroll');
             $('.content .right').offset({ top: h1 + 10 });
+            var w_width=$('.top').width();
+            $('.content .right').css({width:0.34*w_width,'margin-left':0.06*w_width});
             // 计算盒子的位置，（屏幕宽度-版心宽度）/2+
             // var left=(window.innerWidth-$('.top').width())/2+$('.top').width()*0.6;
             // 浏览器时下窗口文档body的宽度$(document.body).width()
@@ -373,7 +375,7 @@
             $('body').removeClass('hidden');
         })
     })
-
+    $('.top .car .playCar').css('width',0.41*w_width)
     //购物车生成之我的收藏
     $('.right .btn a').eq(1).click(function () {
         var isOk = $('.right .color li').hasClass('qq');

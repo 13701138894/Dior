@@ -7,6 +7,7 @@
 @media screen and (min-width: 1328px) {
   div.top,
   div.footer {
-    width: 1328px;
+    width: 100%;
+    max-width: 1442px;
   }
 }
