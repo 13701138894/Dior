@@ -1,17 +1,15 @@
+@import  './screen.less';
+
 .display {
     display: none;
 }
 
-body {
-    // 测试用高度
-    // height: 5000px;
-}
 
-@w:1328px;
+// @w: 1328px;
 // @w: 1200px;
 
 div.top {
-    width: @w;
+    // width: @w;
     margin: 0 auto;
     position: relative;
 
@@ -79,8 +77,10 @@ div.top {
             span:nth-child(2) {
                 font-size: 27px;
             }
+
             span:nth-child(3) {
                 position: relative;
+
                 i {
                     display: block;
                     line-height: 15px;
@@ -156,9 +156,11 @@ div.top {
         }
 
         .right {
-            width: @w*0.34;
-            margin-left: @w*0.06;
-
+            // width: @w*0.34;
+            // margin-left: @w*0.06;
+            width: 34%;
+            margin-left: 6%;
+            height: 900px;
             .tittle {
                 padding-bottom: 20px;
                 font-size: 31px;
@@ -430,11 +432,12 @@ div.top {
             position: fixed;
             left: 0;
             top: 0;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             width: 100%;
             height: 100%;
         }
-        ul{
+
+        ul {
             position: fixed;
             top: 0;
             left: 0;
@@ -442,51 +445,66 @@ div.top {
             height: 100%;
             background-color: #fff;
             overflow: auto;
+
             li {
                 line-height: 79px;
                 border-bottom: 1px solid #e5e5e5;
                 text-align: center;
                 cursor: pointer;
             }
-            li:nth-child(1){
+
+            li:nth-child(1) {
                 padding-left: 27px;
                 text-align: left;
                 margin-left: 0;
+
                 img {
                     height: 25px;
                     cursor: pointer;
                 }
             }
-            li:nth-child(2),li:nth-child(3){
-                background: url(../image/xiaoyuhao.png) 44px 31px  no-repeat;
+
+            li:nth-child(2),
+            li:nth-child(3) {
+                background: url(../image/xiaoyuhao.png) 44px 31px no-repeat;
                 background-size: 11px 14px;
             }
-            li:nth-child(2):hover,li:nth-child(3):hover{
+
+            li:nth-child(2):hover,
+            li:nth-child(3):hover {
                 font-weight: 700;
             }
+
             p {
                 line-height: 57px;
             }
+
             p:hover {
                 font-weight: 700;
             }
-            li:nth-child(4){
+
+            li:nth-child(4) {
                 border-bottom: 0;
             }
-            .cosmetics{
+
+            .cosmetics {
                 line-height: 54px;
                 border-bottom: none;
             }
+
             .d3_show {
                 line-height: 54px;
                 text-align: center;
+
                 // em.line{
                 //     display: inline-block;
                 //     width: 60px;
                 //     line-height: 1;
                 //     border: 1px solid #e5e5e5;
                 // }
-                p:nth-child(2),p:nth-child(4),p:nth-child(9){
+                p:nth-child(2),
+                p:nth-child(4),
+                p:nth-child(9) {
                     border-bottom: 2px solid #e5e5e5;
                     // width: 60px;
                     margin-left: 40%;
@@ -494,7 +512,7 @@ div.top {
                 }
             }
         }
-    
+
     }
 
     // 刻字部分
@@ -694,22 +712,17 @@ div.top {
         background: rgba(0, 0, 0, 0.5);
         z-index: 10000;
 
-        // overflow: auto;
         .playCar {
-            // width: 550px;
-            width: @w*0.41;
+            // width: @w*0.41;
+            width: 41%;
             height: 100%;
             background: #fff;
             position: absolute;
-            // right: 0;
             top: 0;
 
             .close {
                 line-height: 79px;
                 font-size: 24px;
-                // text-align: right;
-                // margin-right: 28px;
-                // margin-left: 480px;
                 margin-left: 87%;
                 cursor: pointer;
             }
@@ -1008,6 +1021,7 @@ div.top {
     .lipstick_diff {
         width: 100%;
         height: 100%;
+
         .cover {
             position: absolute;
             width: 100%;
@@ -1018,7 +1032,8 @@ div.top {
             left: 0;
             z-index: 100;
         }
-        .diff_cover{
+
+        .diff_cover {
             width: 100%;
             height: 100%;
             background-color: transparent;
@@ -1027,8 +1042,9 @@ div.top {
             left: 0;
             z-index: 10000;
         }
+
         .wrapper {
-            position: absolute;
+            position: fixed;
             top: 32px;
             width: 900px;
             height: 571px;
@@ -1040,19 +1056,22 @@ div.top {
             left: 50%;
             transform: translate(-50%);
 
-            .up{
+            .up {
                 text-align: center;
-                h3{
+
+                h3 {
                     padding-top: 43px;
                     font-size: 27px;
                     font-weight: 400;
                     color: #000;
                 }
-                p{
+
+                p {
                     font-size: 14px;
                     color: #000;
                     line-height: 66px;
                 }
+
                 span {
                     position: absolute;
                     top: 40px;
@@ -1062,35 +1081,43 @@ div.top {
                     z-index: 100;
                 }
             }
+
             .down {
                 // border-top: 1px solid #000;
-                display:flex;
-                ul{
+                display: flex;
+
+                ul {
                     padding-top: 26px;
                     margin-left: 7%;
                     padding-left: 3%;
                     margin-right: 10%;
                     border-bottom: 1px solid #e5e5e5;
                     padding-bottom: 10px;
+
                     li {
                         margin-right: 12px;
+
                         img {
                             margin-left: 2px;
                         }
                     }
                 }
-                .left{
-                    flex:1;
+
+                .left {
+                    flex: 1;
                 }
-                .diff{
+
+                .diff {
                     position: relative;
                     margin-top: 50px;
                     width: 190px;
                     height: 300px;
+
                     img {
                         height: 190px;
                     }
-                    .drag{
+
+                    .drag {
                         width: 50%;
                         height: 100%;
                         position: absolute;
@@ -1099,42 +1126,49 @@ div.top {
                         top: 0;
                         border-right: 1px solid #fff;
                         z-index: 10;
-                        img{
+
+                        img {
                             z-index: 10;
                             height: 190px;
                         }
                     }
+
                     span.move {
                         display: inline-block;
                         font-size: 30px;
                         position: absolute;
-                        top:190px;
-                        left:50%;
+                        top: 190px;
+                        left: 50%;
                         color: #000;
                         transform: translate(-50%);
                         cursor: pointer;
                         z-index: 9999999;
                     }
                 }
-                .right{
-                    flex:1;
+
+                .right {
+                    flex: 1;
                 }
-                .diff_ms{
-                    img{
+
+                .diff_ms {
+                    img {
                         width: 30px;
                         height: 30px;
                         border-radius: 50%;
                         margin-left: 11%;
                         margin-top: 22px;
                     }
-                    div{
+
+                    div {
                         padding-top: 24px;
                         margin-left: 5%;
+
                         p {
                             height: 17px;
                         }
                     }
                 }
+
                 a.xz_btn {
                     display: inline-block;
                     width: 76%;
@@ -1186,3 +1220,5 @@ div.top {
 .hidden {
     overflow: hidden;
 }
+
+

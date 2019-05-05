@@ -1,8 +1,19 @@
+@media screen and (max-width: 1327px) {
+  div.top,
+  div.footer {
+    width: 1200px;
+  }
+}
+@media screen and (min-width: 1328px) {
+  div.top,
+  div.footer {
+    width: 1328px;
+  }
+}
 .display {
   display: none;
 }
 div.top {
-  width: 1328px;
   margin: 0 auto;
   position: relative;
 }
@@ -111,8 +122,9 @@ div.top .content .left ul li img {
   width: 100%;
 }
 div.top .content .right {
-  width: 451.52px;
-  margin-left: 79.68px;
+  width: 34%;
+  margin-left: 6%;
+  height: 900px;
 }
 div.top .content .right .tittle {
   padding-bottom: 20px;
@@ -525,7 +537,7 @@ div.top .car {
   z-index: 10000;
 }
 div.top .car .playCar {
-  width: 544.48px;
+  width: 41%;
   height: 100%;
   background: #fff;
   position: absolute;
@@ -778,7 +790,7 @@ div.top .lipstick_diff .diff_cover {
   z-index: 10000;
 }
 div.top .lipstick_diff .wrapper {
-  position: absolute;
+  position: fixed;
   top: 32px;
   width: 900px;
   height: 571px;

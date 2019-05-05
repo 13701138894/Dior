@@ -1,4 +1,4 @@
-(function () {
+(function (window) {
     var pics = [
         { src: '1.jpg', tSrc: '1-t.jpg', lSrc: '1-l.jpg', rSrc: '1-r.jpg', diff: '1-diff.png', cSrc: '1-c.png', sSrc: '1-s.jpg' },
         { src: '2.jpg', tSrc: '2-t.jpg', lSrc: '2-l.jpg', rSrc: '2-r.jpg', diff: '2-diff.png', cSrc: '2-c.png', sSrc: '2-s.jpg' },
@@ -304,7 +304,7 @@
         if (h1 >= allHeight - rightHeight) {
             // 取消绝对定位
             $('.content .right').removeClass('scroll');
-            $('.content .right').offset({ top: allHeight - rightHeight - upperHeight });
+            $('.content .right').offset({ top: allHeight - rightHeight - upperHeight +185});
             $('.content .right').css('left', 0);
             // console.log(h1, allHeight,rightHeight)
             // console.log('aaa',$('.right').width())
@@ -628,10 +628,12 @@
         }
         if (isHas) {
             // alert('已经存在,数量加一，价格加一，总数加一')
-            var cou = parseInt($('.car .down .d3  .right').find('em').text());
+            // var cou = parseInt($('.car .down .d3 li .right').find('em').text());
+            var cou = parseInt($('.car .down .d3 li').eq(index_has).find('.right em').text());
+            console.log(index_has)
             cou++;
-            alert(cou)
-            $('.car .down .d3  .right').find('em').text(cou);
+            // alert(cou)
+            $('.car .down .d3  li').eq(index_has).find('.right em').text(cou);
             // -按钮取消禁止
             $('.car .down .d3 .add').prev().removeClass('ccc').css('cursor', 'pointer');
             // tab切换栏数量更新
@@ -858,7 +860,7 @@
     //点击‘选择按钮’事件
     $('.top .lipstick_diff .down  a.xz_btn').on('click', function () {
         var index = $(this).prev().prev().find('li.dj').index();
-        alert(index);
+        // alert(index);
         // return;
         var obj1 = pics[index];
         var obj2 = datas[index];
@@ -945,6 +947,6 @@
 
 
 
-})();
+})(window);
 
 
