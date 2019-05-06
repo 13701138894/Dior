@@ -1,13 +1,14 @@
 @media screen and (max-width: 1327px) {
   div.top,
-  .footer {
+  div.footer {
     width: 1200px;
   }
 }
 @media screen and (min-width: 1328px) {
   div.top,
-  .footer {
-    width: 1328px;
+  div.footer {
+    width: 100%;
+    max-width: 1442px;
   }
 }
 svg {
