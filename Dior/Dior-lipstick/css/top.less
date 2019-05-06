@@ -523,7 +523,7 @@ div.top {
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 100;
+        z-index: 100000;
 
         .wrapper {
             width: 530px;
@@ -634,13 +634,18 @@ div.top {
         background-color: rgba(0, 0, 0, 0.5);
 
         .wrapper {
-            position: relative;
+            // position: relative;
+            position: absolute;
             width: 680px;
             height: 571px;
             background-color: #fff;
-            margin: 32px auto;
+            // margin-top: 32px;
+            top: 32px;
+            left: 50%;
+            transform: translate(-50%);
             overflow: auto;
             padding: 0 41px;
+            z-index: 99999999 !important;
 
             h3 {
                 text-align: center;
@@ -669,7 +674,7 @@ div.top {
 
     .scroll {
         position: fixed !important;
-        z-index: 10;
+        z-index: 0;
         // right: 23px;
         // top: 20px;
     }

@@ -386,7 +386,7 @@ div.top .kz {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 100000;
 }
 div.top .kz .wrapper {
   width: 530px;
@@ -476,13 +476,16 @@ div.top .tuihuan {
   background-color: rgba(0, 0, 0, 0.5);
 }
 div.top .tuihuan .wrapper {
-  position: relative;
+  position: absolute;
   width: 680px;
   height: 571px;
   background-color: #fff;
-  margin: 32px auto;
+  top: 32px;
+  left: 50%;
+  transform: translate(-50%);
   overflow: auto;
   padding: 0 41px;
+  z-index: 99999999 !important;
 }
 div.top .tuihuan .wrapper h3 {
   text-align: center;
@@ -505,7 +508,7 @@ div.top .tuihuan .wrapper .close {
 }
 div.top .scroll {
   position: fixed !important;
-  z-index: 10;
+  z-index: 0;
 }
 div.top .sc {
   float: left;
