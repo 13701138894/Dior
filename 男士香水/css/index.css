@@ -1,0 +1,564 @@
+.banner {
+  width: 95%;
+  margin: 0 auto;
+  min-width: 320px;
+}
+.content {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+.content .smallbox {
+  width: 40%;
+  height: 100%;
+  float: right;
+  background-color: white;
+  position: relative;
+  display: none;
+}
+.content .wrong {
+  position: absolute;
+  right: 5%;
+  top: 3%;
+}
+.content .wrong a {
+  display: block;
+}
+.content .wrong a img {
+  width: 30px;
+}
+.content .tab {
+  overflow: auto;
+  height: 480px;
+}
+.content .tab ul {
+  margin-top: 50px;
+  height: 800px;
+}
+.content .tab li {
+  display: flex;
+}
+.content .tab li div {
+  flex: 1;
+  text-align: center;
+}
+.content .tab li .first {
+  margin-left: 10px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.content .tab li .first .iconfont {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+}
+.content .tab li .first img {
+  width: 100%;
+}
+.content .tab li .second {
+  margin-top: 30px;
+  text-align: left;
+  color: black;
+}
+.content .tab li .second .delete {
+  text-decoration: underline;
+}
+.content .tab li .second a {
+  color: black;
+}
+.content .tab li .second a span {
+  font-weight: 700;
+}
+.content .tab li .second p {
+  line-height: 20px;
+}
+.content .tab li .second p i {
+  font-style: normal;
+  font-weight: 700;
+}
+.content .tab li .second .details {
+  margin-top: 10px;
+}
+.content .tab li .last {
+  margin-top: 60px;
+}
+.content .tab li .last #jian {
+  font-size: 25px;
+  line-height: 34px;
+}
+.content .tab li .last #jia {
+  font-size: 28px;
+  line-height: 26px;
+}
+.content .tab li .last #jia,
+.content .tab li .last #jian {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  vertical-align: top;
+  border: none;
+  background-color: white;
+}
+.content .tab li .last img {
+  width: 30%;
+}
+.content .aboutme {
+  margin-top: 15%;
+  height: 50px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+.content .aboutme div {
+  flex: 1;
+  text-align: center;
+  line-height: 50px;
+  font-size: 15px;
+  padding: 0 31px;
+}
+.content .aboutme div .add {
+  margin-top: 40px;
+  width: 100%;
+}
+.content .aboutme div li {
+  position: relative;
+}
+.content .aboutme div .me {
+  display: block;
+  height: 100%;
+  padding: 0 20px;
+}
+.content .aboutme div .first img {
+  width: 120%;
+}
+.content .aboutme div .second {
+  width: 150px;
+  text-align: left;
+  color: black;
+  position: absolute;
+  left: 120%;
+  top: 10%;
+}
+.content .aboutme div .second .delete {
+  text-decoration: underline;
+}
+.content .aboutme div .second a {
+  color: black;
+}
+.content .aboutme div .second a span {
+  font-weight: 700;
+}
+.content .aboutme div .second p {
+  line-height: 20px;
+}
+.content .aboutme div .second p i {
+  font-style: normal;
+  font-weight: 700;
+}
+.content .aboutme div .second .details {
+  margin-top: 10px;
+}
+.content .aboutme div .last img {
+  width: 30%;
+  position: absolute;
+  left: 260%;
+  top: 30%;
+}
+.content .collect {
+  overflow: auto;
+}
+.content .collect .best {
+  display: none;
+  margin-top: 50px;
+  text-align: center;
+}
+.content .collect .best span {
+  font-size: 15px;
+  color: #000;
+  text-align: center;
+}
+.content .user {
+  text-align: center;
+  color: black;
+  position: relative;
+  margin: 0,auto;
+  
+}
+.bbt{
+  display: none;
+}
+.content .user h3 {
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 50px;
+}
+.content .user p {
+  margin-top: 15px;
+}
+.content .user .login {
+  display: block;
+  width: 100px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  color: white;
+  background: black;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 7%;
+}
+.content .user .create {
+  width: 100%;
+  height: 1000px;
+  background-color: #f6f6f6;
+  margin-top: 20%;
+  padding-top: 30px;
+  position: relative;
+}
+.content .user .create a {
+  font-size: 25px;
+  margin-top: 20px;
+  color: black;
+}
+.content .user .create i {
+  display: block;
+  width: 132px;
+  height: 48px;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-style: normal;
+  line-height: 48px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  margin-left: -66px;
+  top: 10%;
+}
+.best-1 {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 15px;
+  color: #000;
+}
+.best-1 a {
+  display: inline-block;
+  width: 132px;
+  height: 48px;
+  border: 1px solid #000;
+  line-height: 48px;
+  border-radius: 25px;
+  margin-top: 18px;
+  margin-left: 2px;
+}
+.best-1 a:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+.two #jj img {
+  width: 25px;
+  cursor: pointer;
+}
+.two #last-1 {
+  display: block;
+  text-align: center;
+  display: none;
+}
+.two #last-1 p {
+  display: block;
+  height: 69px;
+  line-height: 69px;
+  text-align: center;
+  font-size: 16px;
+  background-color: #f6f6f6;
+}
+.two #last-1 button {
+  margin-top: 25px;
+  width: 100px;
+  line-height: 48px;
+  border-radius: 24px;
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.two #last-1 button a {
+  color: #fff;
+}
+.two #last-1 button:hover {
+  font-weight: 700;
+}
+.video-content {
+  margin-top: 40px;
+}
+.video-img {
+  position: relative;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.video-img .controller {
+  position: absolute;
+  bottom: 60px;
+}
+.video-img #video {
+  width: 960px;
+}
+.video-img svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 70px;
+  cursor: pointer;
+  fill: white;
+}
+.video-img .controller {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  left: 50%;
+  margin-left: -480px;
+  width: 960px;
+}
+.video-img .controller .progress {
+  height: 3px;
+  background-color: #666;
+  cursor: pointer;
+}
+.video-img .controller .progress .progress-current {
+  width: 0;
+  height: 3px;
+  background-color: #fff;
+}
+.video-img .controller .controller-bar {
+  height: 46px;
+  background-color: #000;
+}
+.video-img .controller .controller-bar div {
+  float: left;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  color: #fff;
+}
+.video-img .controller .controller-bar div:nth-child(1) {
+  position: relative;
+  width: 65px;
+  border-right: 2px solid #fff;
+}
+.video-img .controller .controller-bar div:nth-child(1) svg {
+  width: 10px;
+  height: 20px;
+}
+.video-img .controller .controller-bar div:nth-child(2) {
+  width: 82px;
+  padding: 0 10px;
+}
+.video-img .controller .controller-bar div:nth-child(3) {
+  position: relative;
+  width: 112px;
+  padding: 0 10px;
+}
+.video-img .controller .controller-bar div:nth-child(3) svg {
+  width: 21px;
+  height: 20px;
+  left: 28px;
+  margin-left: 0;
+}
+.video-img .controller .controller-bar div:nth-child(3) .scroll,
+.video-img .controller .controller-bar div:nth-child(3) .inner-scroll {
+  position: absolute;
+  left: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 5px;
+  background-color: #aaa;
+  cursor: pointer;
+}
+.video-img .controller .controller-bar div:nth-child(3) .scroll .inner-scroll,
+.video-img .controller .controller-bar div:nth-child(3) .inner-scroll .inner-scroll {
+  left: 0;
+  background-color: #fff;
+}
+.video-img .controller .controller-bar div:nth-child(5) {
+  position: relative;
+  float: right;
+  width: 54px;
+}
+.video-img .controller .controller-bar div:nth-child(5) svg {
+  width: 25px;
+  height: 20px;
+}
+.video-img .controller .controller-bar div:nth-child(4) {
+  position: relative;
+  float: right;
+  width: 114px;
+  border-left: 2px solid #fff;
+}
+.introduce {
+  margin-bottom: 50px;
+}
+.introduce p {
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+}
+.show {
+  border-top: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
+  padding-top: 20px;
+}
+.show .mt {
+  font-size: 25px;
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+.show img {
+  width: 100%;
+}
+.show i {
+  font-style: normal;
+  font-weight: 700;
+}
+.show ul {
+  display: flex;
+}
+.show ul li {
+  margin-bottom: 80px;
+  flex: 1;
+  position: relative;
+  margin-right: 40px;
+}
+.show ul li .iconfont {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  font-size: 25px;
+  font-weight: 400;
+}
+.show ul li img {
+  margin-bottom: 20px;
+}
+.show ul li p {
+  color: black;
+}
+.show ul li b {
+  font-weight: 700;
+}
+.show ul li .left {
+  font-weight: 700;
+}
+.show ul li span {
+  display: inline-block;
+  margin-top: 15px;
+  color: black;
+}
+.show ul li span p {
+  display: inline;
+}
+.show ul li span i {
+  font-style: normal;
+  font-weight: 400;
+}
+.public h3 {
+  text-align: center;
+  color: black;
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.public .public-l {
+  margin-right: 40px;
+  float: left;
+  position: relative;
+}
+.public .public-l .left {
+  display: inline;
+  font-weight: 700;
+}
+.public .public-l .iconfont {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  font-size: 25px;
+  font-weight: 400;
+}
+.public .public-l a {
+  display: block;
+  width: 412px;
+}
+.public .public-l i {
+  color: black;
+  font-style: normal;
+  font-weight: 700;
+}
+.public .public-l img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.public .public-l p {
+  color: black;
+  display: block;
+}
+.public .public-l .first {
+  color: #757575;
+}
+.public .public-l span {
+  display: inline-block;
+  margin-top: 20px;
+  color: black;
+  font-weight: 400;
+}
+.public .public-r {
+  float: left;
+  position: relative;
+}
+.public .public-r img {
+  width: 412px;
+  vertical-align: middle;
+}
+.public .public-r a {
+  display: block;
+}
+.public .public-r span {
+  display: block;
+  height: 170px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.public .public-r p {
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.public .public-r i {
+  display: block;
+  width: 162px;
+  height: 48px;
+  font-style: normal;
+  text-align: center;
+  line-height: 48px;
+  border: 1px solid black;
+  position: absolute;
+  left: 30%;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.public .public-r i:hover {
+  color: black;
+}

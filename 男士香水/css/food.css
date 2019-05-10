@@ -1,0 +1,322 @@
+.food ul {
+    font-size: 14px;
+    font-family: '宋体';
+    /* background: #dfdfdf; */
+    list-style: none;
+}
+.food{
+    background-image: url(img/beijing.jpg);
+
+}
+
+.food a {
+    text-decoration: none;
+    color: #666;
+}
+
+.food input,
+img {
+    outline: none;
+    vertical-align: middle;
+}
+
+.food .fl {
+    float: left;
+}
+
+.food .fr {
+    float: right;
+}
+
+/* 第一部分 */
+.food .foot {
+    width: 100%;
+    height: 450px;
+    background-image: url(../imgs/beijing.jpg);
+    text-align: center;
+}
+
+.food .headline {
+    font-size: 34px;
+    font-weight: 700;
+    font-style: Century Gothic Std, Arial, sans-serif;
+}
+
+.food .banner {
+ margin-top: 48px;
+}
+.food h2{
+    padding-top: 20px;
+}
+
+.food .foot input {
+    width: 330px;
+    height: 60px;
+    font-size: 16px;
+    padding-left: 20px;
+    border: 1px solid black;
+    border-radius: 34px 0 0 34px;
+
+}
+
+.food .banner h2 {
+    padding-bottom: 30px;
+}
+
+.food .banner a {
+    display: inline-block;
+    width: 70px;
+    height: 60px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 0 34px 34px 0;
+    vertical-align: middle;
+}
+
+.food .banner a span {
+    font-size: 25px;
+    color: #dfdfdf;
+    text-align: center;
+    line-height: 60px;
+}
+
+/* 第二部分 */
+.food .lists {
+    background: black;
+    height: 362px;
+}
+
+.food .lists h1 {
+    text-align: center;
+    padding-top: 60px;
+    color: white;
+    font-size: 32px;
+}
+
+.food .lists li {
+    width: 20%;
+    float: left;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+
+}
+
+.food .lists li span {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.food .lists h4 {
+    margin-top: 18px;
+}
+
+.food .listsimg img {
+    width: 217px;
+    height: 155px;
+}
+
+/* 第三部分 */
+
+.food .end {
+    float: left;
+    width: 100%;
+    height: 375px;
+    position: relative;
+    background-color: #ccc;
+}
+
+.food .end ul {
+    float: left;
+    width: 33.33%;
+}
+
+/* 左 */
+.food .endclick {
+    text-align: center;
+    margin-top: 155px;
+}
+
+.food .endclick div {
+    margin-top: 20px;
+}
+
+.food .endclick p {
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+}
+
+.food .endclick input {
+    width: 250px;
+    height: 52px;
+    font-size: 16px;
+    padding-left: 20px;
+    border: 1px solid black;
+    border-radius: 34px 0 0 34px;
+    border-right: none;
+}
+
+.food .endclick a {
+    display: inline-block;
+    width: 74px;
+    height: 52px;
+    background-color: #cccccc;
+    border: 1px solid black;
+    border-radius: 0 34px 34px 0;
+    vertical-align: middle;
+    line-height: 52px;
+    text-align: center;
+    border-left: none;
+    font-size: 16px;
+}
+
+/* 中 */
+.food .endlist {
+    text-align: center;
+    margin-top: 43px;
+}
+
+.food .endlist li {
+    line-height: 40px;
+}
+
+.food .endlist p {
+    display: inline-block;
+}
+
+.food .endlist li img {
+    display: inline-block;
+}
+
+.food .endlist a {
+    text-decoration: underline;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.food .endlist a:hover {
+    color: #000;
+    font-weight: 700;
+}
+
+/* 右 */
+.food .endlists a {
+    text-decoration: none;
+    margin-left: 0;
+}
+
+.food .endlists span {
+    font-size: 12px;
+    color: #666;
+    height: 20px;
+}
+
+.food .endlistsp {
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
+
+.food .endlast {
+    text-align: center;
+    margin-top: 90px;
+    line-height: 40px;
+}
+
+.food .endlast li p {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.food .endlast li span {
+
+    font-size: 50px;
+    height: 30px;
+}
+
+.food .endlaster {
+    height: 120px;
+    width: 75px;
+    border-bottom: 3px solid #666;
+    margin: 0 auto;
+}
+
+/* 右菜单栏 */
+
+.food .endlastp button {
+    width: 325px;
+    height: 47px;
+    border: 1px solid black;
+    border-radius: 34px;
+    overflow: hidden;
+    position: relative;
+    z-index: 100;
+    outline: none;
+    position: relative;
+}
+
+.food .endlastps {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    line-height: 47px;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.food .endlastpy :nth-child(1) {
+    float: left;
+    margin-left: 30px;
+}
+
+.food .endlastpy :nth-child(3) {
+    font-size: 25px;
+    margin-right: -80px;
+    position: absolute;
+    left: 18px;
+}
+
+.food .endlastpy :nth-child(4) {
+    display: none;
+    font-size: 25px;
+    margin-right: -80px;
+    position: absolute;
+    left: 18px;
+}
+
+.food .enlastover {
+    width: 284px;
+    height: 310px;
+    border: 1px solid #666;
+    position: absolute;
+    right: 77px;
+    background: rgb(236, 232, 233);
+    top: -42px;
+    right: 6%;
+    overflow: auto;
+    position: absolute;
+}
+
+.food .enlastover ul {
+    display: inline-block;
+    width: 100%;
+}
+
+.food .enlastover li {
+    font-size: 16px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.food .enlastover li:hover {
+    color: #000;
+    font-weight: 700;
+}
+
+.food .enlastover li span {
+    font-size: 20px;
+}
+/*  */
